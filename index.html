@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Throw Pine St. Down</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+
+    #game {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #boot-error {
+      position: fixed;
+      z-index: 2;
+      inset: 0;
+      margin: 0;
+      padding: 48px;
+      box-sizing: border-box;
+      background: #000;
+      color: #fff;
+      font: 22px/1.45 system-ui, sans-serif;
+    }
+
+    #boot-error[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="game"></div>
+  <p id="boot-error" hidden></p>
+
+  <!--
+    Phaser is the UMD build, so it attaches window.Phaser.
+    Our own code below is ES modules. The classic script must stay
+    above the module so Phaser exists before BootScene is evaluated.
+  -->
+  <script src="./vendor/phaser-3.90.0.min.js"></script>
+  <script type="module">
+    const bootError = document.getElementById('boot-error');
+
+    function showBootError(message) {
+      bootError.hidden = false;
+      bootError.textContent = message;
+    }
+
+    // ES modules are blocked when a page is opened with file://.
+    if (location.protocol === 'file:') {
+      showBootError(
+        'This page was opened as a file, so the browser will not load the game modules. From the project folder run: python3 -m http.server 8080 — then open http://localhost:8080/'
+      );
+    } else {
+      import('./src/main.js').catch((error) => {
+        console.error(error);
+        const detail = error && error.message ? error.message : String(error);
+        showBootError('The game failed to load. ' + detail);
+      });
+    }
+  </script>
+</body>
+</html>
