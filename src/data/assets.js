@@ -1,7 +1,9 @@
+import { rosterAssets } from './characters.js';
+
 /**
  * Images grouped by the screen that needs them.
- * PreloadScene loads TITLE_ASSETS. Later screens add their own lists here
- * instead of hard-coding paths inside a scene.
+ * PreloadScene loads `preloadAssets()`. Add a file by appending to the
+ * group that owns it, or to the roster in characters.js.
  *
  * `key` is the name scenes use to draw the image.
  * `url` is the file path relative to index.html.
@@ -11,6 +13,15 @@ export const TITLE_ASSETS = [
   { key: 'title-logo', url: 'assets/title/title-pstd.png' },
   { key: 'title-press-start', url: 'assets/title/title-pressstart.png' },
 ];
+
+export const SELECT_UI_ASSETS = [
+  { key: 'select-bg', url: 'assets/select/charselect-bkg.png' },
+  { key: 'select-title', url: 'assets/select/charselect-chooseyourfighter-text.png' },
+];
+
+export function preloadAssets() {
+  return [...TITLE_ASSETS, ...SELECT_UI_ASSETS, ...rosterAssets()];
+}
 
 export function assertUniqueAssets(list, label) {
   if (!Array.isArray(list) || list.length === 0) {
