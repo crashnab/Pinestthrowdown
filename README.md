@@ -12,18 +12,20 @@ ES modules do not load from a `file://` page. From this folder:
 python3 -m http.server 8080
 ```
 
-Open [http://localhost:8080/](http://localhost:8080/). You should see a black 1920×1080 canvas with a small `BOOT OK` label in the lower left. That label is only a boot check.
+Open [http://localhost:8080/](http://localhost:8080/). Boot checks the canvas size, Preload loads the title art, and the title screen appears. Press Start blinks. Enter, Space, or a click accepts it. Character select is not built yet, so the title stays up after that press.
 
 ## Where the code goes
 
-Only the boot files exist today. The rest of the tree is the plan, so new characters and stages are data instead of new game engines.
+Boot, preload, and the title screen exist. The rest of the tree is the plan, so new characters and stages are data instead of new game engines.
 
 ```
 index.html                  Page shell. Loads Phaser, then src/main.js.
 src/main.js                 Phaser config: size, scale, physics, scene list.
-src/scenes/BootScene.js     Proves the canvas is alive. Hands off later.
-src/scenes/PreloadScene.js  Will load images and atlases, with a progress bar.
-src/scenes/TitleScene.js    Title screen. 1-player or 2-player.
+src/phaser.js                 The Phaser global, checked once.
+src/scenes/BootScene.js     Checks 1920×1080, then starts Preload.
+src/scenes/PreloadScene.js  Loads TITLE_ASSETS and shows progress.
+src/scenes/TitleScene.js    Background, logo, blinking Press Start.
+src/data/assets.js          File list for Preload. Title art is the first list.
 src/scenes/SelectScene.js   Character select.
 src/scenes/GameScene.js     One match.
 src/scenes/ContinueScene.js Arcade continue countdown (10 seconds).
@@ -39,31 +41,17 @@ assets/                     Art. See below.
 
 `main.js` is the only place a scene is registered. A scene file that is not listed there never runs.
 
-## Where to put art
+## Art that is loaded
 
-Drop files in now. Nothing loads them until the preload step.
-
-Keep each TexturePacker pair together, and do not rename the `.png` unless you also change the image name stored inside its `.json` (`meta.image`). Phaser resolves that name next to the JSON.
+`src/data/assets.js` lists the title files. Preload asks Phaser for that list and nothing else yet.
 
 ```
-assets/title/background.png          Title-screen background.
-assets/title/logo.png                THROW PINE ST. DOWN, if it is a separate image.
-
-assets/select/background.png         Character-select background.
-assets/select/title.png              CHOOSE YOUR FIGHTER, if it is a separate image.
-assets/select/portraits/easy-e.png   Large side portrait.
-assets/select/portraits/robgob.png
-assets/select/thumbnails/            One image per roster member, all 7.
-
-assets/ui/                           Health bar, timer plate, and HUD portraits.
-
-assets/stages/concert/background.png Concert stage. Must be 2400×1200.
-
-assets/characters/easy-e/            easy-e.png + easy-e.json (JSON Hash).
-assets/characters/robgob/            robgob.png + robgob.json (JSON Hash).
+assets/title/title-bkg.jpg           1920×1080 background
+assets/title/title-pstd.png          THROW PINE ST. DOWN logo
+assets/title/title-pressstart.png    PRESS START
 ```
 
-Ids used in code later: `easy-e` (Easy E) and `robgob` (RobGob). Thumbnail filenames for the other five can stay as exported; the roster file will map them.
+The select screen, HUD, concert stage, and both character atlases are in `assets/` and wait for later scenes. The atlases are TexturePacker's multi-pack JSON (`textures` array). The fight scene will load them with `this.load.multiatlas`, which is the loader that matches that file. Keep each `.png` next to its `.json`. The image name inside the JSON is `sprites-erik.png` and `sprites-rob.png`.
 
 ### Camera on the concert stage
 

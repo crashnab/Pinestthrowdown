@@ -1,4 +1,6 @@
 import BootScene from './scenes/BootScene.js';
+import PreloadScene from './scenes/PreloadScene.js';
+import TitleScene from './scenes/TitleScene.js';
 
 export const GAME_WIDTH = 1920;
 export const GAME_HEIGHT = 1080;
@@ -16,8 +18,8 @@ function getPhaser() {
 }
 
 /**
- * One config object for the whole game. New scenes get added to `scene`
- * in the order they should be available. Only Boot runs on startup.
+ * One config object for the whole game. New scenes get added to `scene`.
+ * Only the first scene runs on startup. Boot starts Preload, which starts Title.
  */
 export function createGameConfig() {
   const Phaser = getPhaser();
@@ -45,7 +47,7 @@ export function createGameConfig() {
         debug: false,
       },
     },
-    scene: [BootScene],
+    scene: [BootScene, PreloadScene, TitleScene],
     banner: false,
   };
 }
