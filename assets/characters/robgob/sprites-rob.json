@@ -1,0 +1,1805 @@
+{
+	"textures": [
+		{
+			"image": "sprites-rob.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 4551,
+				"h": 8084
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "sprites-rob/block/Rob-sprite-block_0004_Frame-004-—-Rob-2D-key0046.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 689,
+						"y": 231,
+						"w": 436,
+						"h": 831
+					},
+					"frame": {
+						"x": 3591,
+						"y": 6911,
+						"w": 436,
+						"h": 831
+					}
+				},
+				{
+					"filename": "sprites-rob/block/Rob-sprite-block_0005_Frame-003-—-Rob-2D-key0030.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 690,
+						"y": 163,
+						"w": 456,
+						"h": 899
+					},
+					"frame": {
+						"x": 1174,
+						"y": 4681,
+						"w": 456,
+						"h": 899
+					}
+				},
+				{
+					"filename": "sprites-rob/block/Rob-sprite-block_0006_Frame-002-—-Rob-2D-key0016.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 690,
+						"y": 173,
+						"w": 435,
+						"h": 889
+					},
+					"frame": {
+						"x": 2574,
+						"y": 2555,
+						"w": 435,
+						"h": 889
+					}
+				},
+				{
+					"filename": "sprites-rob/block/Rob-sprite-block_0007_Frame-001-—-Rob-2D-key0000.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 691,
+						"y": 173,
+						"w": 435,
+						"h": 889
+					},
+					"frame": {
+						"x": 2096,
+						"y": 4648,
+						"w": 435,
+						"h": 889
+					}
+				},
+				{
+					"filename": "sprites-rob/crouch/Rob_-sprite-crouch_0003_Frame-004-—-Rob-2D-key0131.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 508,
+						"w": 703,
+						"h": 538
+					},
+					"frame": {
+						"x": 2481,
+						"y": 813,
+						"w": 703,
+						"h": 538
+					}
+				},
+				{
+					"filename": "sprites-rob/crouch/Rob_-sprite-crouch_0004_Frame-003-—-Rob-2D-key0119.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 674,
+						"y": 377,
+						"w": 696,
+						"h": 661
+					},
+					"frame": {
+						"x": 3,
+						"y": 7377,
+						"w": 696,
+						"h": 661
+					}
+				},
+				{
+					"filename": "sprites-rob/crouch/Rob_-sprite-crouch_0005_Frame-002-—-Rob-2D-key0111.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 683,
+						"y": 167,
+						"w": 441,
+						"h": 870
+					},
+					"frame": {
+						"x": 3841,
+						"y": 4248,
+						"w": 441,
+						"h": 870
+					}
+				},
+				{
+					"filename": "sprites-rob/crouch/Rob_-sprite-crouch_0006_Frame-001-—-Rob-2D-key0097.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 682,
+						"y": 140,
+						"w": 414,
+						"h": 896
+					},
+					"frame": {
+						"x": 2156,
+						"y": 2815,
+						"w": 414,
+						"h": 896
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0000_Frame-014-—-Rob-2D-key0310.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 493,
+						"y": 771,
+						"w": 1002,
+						"h": 305
+					},
+					"frame": {
+						"x": 3238,
+						"y": 1294,
+						"w": 1002,
+						"h": 305
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0001_Frame-013-—-Rob-2D-key0304.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 498,
+						"y": 767,
+						"w": 999,
+						"h": 309
+					},
+					"frame": {
+						"x": 2235,
+						"y": 1355,
+						"w": 999,
+						"h": 309
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0002_Frame-012-—-Rob-2D-key0296.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 495,
+						"y": 663,
+						"w": 867,
+						"h": 413
+					},
+					"frame": {
+						"x": 1610,
+						"y": 849,
+						"w": 867,
+						"h": 413
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0003_Frame-011-—-Rob-2D-key0282.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 494,
+						"y": 427,
+						"w": 564,
+						"h": 649
+					},
+					"frame": {
+						"x": 1271,
+						"y": 7357,
+						"w": 564,
+						"h": 649
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0004_Frame-010-—-Rob-2D-key0274.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 479,
+						"y": 430,
+						"w": 517,
+						"h": 646
+					},
+					"frame": {
+						"x": 1839,
+						"y": 7357,
+						"w": 517,
+						"h": 646
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0005_Frame-009-—-Rob-2D-key0268.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 480,
+						"y": 422,
+						"w": 564,
+						"h": 654
+					},
+					"frame": {
+						"x": 703,
+						"y": 7358,
+						"w": 564,
+						"h": 654
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0006_Frame-008-—-Rob-2D-key0264.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 497,
+						"y": 424,
+						"w": 645,
+						"h": 652
+					},
+					"frame": {
+						"x": 1586,
+						"y": 1266,
+						"w": 645,
+						"h": 652
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0007_Frame-007-—-Rob-2D-key0256.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 655,
+						"y": 609,
+						"w": 665,
+						"h": 463
+					},
+					"frame": {
+						"x": 3188,
+						"y": 827,
+						"w": 665,
+						"h": 463
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0008_Frame-006-—-Rob-2D-key0240.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 879,
+						"y": 245,
+						"w": 469,
+						"h": 812
+					},
+					"frame": {
+						"x": 3118,
+						"y": 6937,
+						"w": 469,
+						"h": 812
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0009_Frame-005-—-Rob-2D-key0234.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 818,
+						"y": 107,
+						"w": 478,
+						"h": 955
+					},
+					"frame": {
+						"x": 785,
+						"y": 1969,
+						"w": 478,
+						"h": 955
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0010_Frame-004-—-Rob-2D-key0230.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 793,
+						"y": 173,
+						"w": 441,
+						"h": 879
+					},
+					"frame": {
+						"x": 2909,
+						"y": 3448,
+						"w": 441,
+						"h": 879
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0011_Frame-003-—-Rob-2D-key0226.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 699,
+						"y": 181,
+						"w": 487,
+						"h": 850
+					},
+					"frame": {
+						"x": 4061,
+						"y": 3,
+						"w": 487,
+						"h": 850
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0012_Frame-002-—-Rob-2D-key0224.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 700,
+						"y": 161,
+						"w": 462,
+						"h": 871
+					},
+					"frame": {
+						"x": 2964,
+						"y": 4331,
+						"w": 462,
+						"h": 871
+					}
+				},
+				{
+					"filename": "sprites-rob/dead/Rob-sprite-dead_0013_Frame-001-—-Rob-2D-key0194.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 706,
+						"y": 154,
+						"w": 425,
+						"h": 881
+					},
+					"frame": {
+						"x": 2535,
+						"y": 4602,
+						"w": 425,
+						"h": 881
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 165,
+						"w": 465,
+						"h": 895
+					},
+					"frame": {
+						"x": 1971,
+						"y": 3749,
+						"w": 465,
+						"h": 895
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 159,
+						"w": 465,
+						"h": 901
+					},
+					"frame": {
+						"x": 1687,
+						"y": 2844,
+						"w": 465,
+						"h": 901
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0006_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 177,
+						"w": 498,
+						"h": 883
+					},
+					"frame": {
+						"x": 690,
+						"y": 5585,
+						"w": 498,
+						"h": 883
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0007_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 178,
+						"w": 505,
+						"h": 882
+					},
+					"frame": {
+						"x": 692,
+						"y": 6472,
+						"w": 505,
+						"h": 882
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0008_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 177,
+						"w": 498,
+						"h": 883
+					},
+					"frame": {
+						"x": 690,
+						"y": 5585,
+						"w": 498,
+						"h": 883
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0009_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 159,
+						"w": 465,
+						"h": 901
+					},
+					"frame": {
+						"x": 1687,
+						"y": 2844,
+						"w": 465,
+						"h": 901
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0010_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 165,
+						"w": 465,
+						"h": 895
+					},
+					"frame": {
+						"x": 1971,
+						"y": 3749,
+						"w": 465,
+						"h": 895
+					}
+				},
+				{
+					"filename": "sprites-rob/idle/Rob-sprite-idle_0011_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 645,
+						"y": 177,
+						"w": 465,
+						"h": 883
+					},
+					"frame": {
+						"x": 2440,
+						"y": 3715,
+						"w": 465,
+						"h": 883
+					}
+				},
+				{
+					"filename": "sprites-rob/jump-attack/Rob-sprite-jump-attack_0002_Frame-005-—-Rob-2D-key0465.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 611,
+						"y": 109,
+						"w": 747,
+						"h": 935
+					},
+					"frame": {
+						"x": 835,
+						"y": 986,
+						"w": 747,
+						"h": 935
+					}
+				},
+				{
+					"filename": "sprites-rob/jump-attack/Rob-sprite-jump-attack_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 611,
+						"y": 5,
+						"w": 828,
+						"h": 979
+					},
+					"frame": {
+						"x": 3,
+						"y": 986,
+						"w": 828,
+						"h": 979
+					}
+				},
+				{
+					"filename": "sprites-rob/jump-attack/Rob-sprite-jump-attack_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 611,
+						"y": 5,
+						"w": 834,
+						"h": 979
+					},
+					"frame": {
+						"x": 3,
+						"y": 3,
+						"w": 834,
+						"h": 979
+					}
+				},
+				{
+					"filename": "sprites-rob/jump-attack/Rob-sprite-jump-attack_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 611,
+						"y": 5,
+						"w": 765,
+						"h": 979
+					},
+					"frame": {
+						"x": 841,
+						"y": 3,
+						"w": 765,
+						"h": 979
+					}
+				},
+				{
+					"filename": "sprites-rob/jump/Rob-sprite-jump_0002_Frame-005-—-Rob-2D-key0465.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 611,
+						"y": 109,
+						"w": 747,
+						"h": 935
+					},
+					"frame": {
+						"x": 835,
+						"y": 986,
+						"w": 747,
+						"h": 935
+					}
+				},
+				{
+					"filename": "sprites-rob/jump/Rob-sprite-jump_0003_Frame-004-—-Rob-2D-key0460.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 611,
+						"y": 5,
+						"w": 765,
+						"h": 979
+					},
+					"frame": {
+						"x": 841,
+						"y": 3,
+						"w": 765,
+						"h": 979
+					}
+				},
+				{
+					"filename": "sprites-rob/jump/Rob-sprite-jump_0004_Frame-003-—-Rob-2D-key0454.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 601,
+						"y": 80,
+						"w": 778,
+						"h": 964
+					},
+					"frame": {
+						"x": 3,
+						"y": 1969,
+						"w": 778,
+						"h": 964
+					}
+				},
+				{
+					"filename": "sprites-rob/jump/Rob-sprite-jump_0005_Frame-002-—-Rob-2D-key0449.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 618,
+						"y": 227,
+						"w": 721,
+						"h": 820
+					},
+					"frame": {
+						"x": 3336,
+						"y": 3,
+						"w": 721,
+						"h": 820
+					}
+				},
+				{
+					"filename": "sprites-rob/jump/Rob-sprite-jump_0006_Frame-001-—-Rob-2D-key0418.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 656,
+						"y": 177,
+						"w": 466,
+						"h": 867
+					},
+					"frame": {
+						"x": 1153,
+						"y": 3810,
+						"w": 466,
+						"h": 867
+					}
+				},
+				{
+					"filename": "sprites-rob/kick/Rob-sprite-kick_0003_Frame-006-—-Rob-2D-key0566.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 800,
+						"y": 206,
+						"w": 547,
+						"h": 870
+					},
+					"frame": {
+						"x": 3013,
+						"y": 2556,
+						"w": 547,
+						"h": 870
+					}
+				},
+				{
+					"filename": "sprites-rob/kick/Rob-sprite-kick_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 731,
+						"y": 249,
+						"w": 853,
+						"h": 806
+					},
+					"frame": {
+						"x": 2479,
+						"y": 3,
+						"w": 853,
+						"h": 806
+					}
+				},
+				{
+					"filename": "sprites-rob/kick/Rob-sprite-kick_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 731,
+						"y": 213,
+						"w": 865,
+						"h": 842
+					},
+					"frame": {
+						"x": 1610,
+						"y": 3,
+						"w": 865,
+						"h": 842
+					}
+				},
+				{
+					"filename": "sprites-rob/kick/Rob-sprite-kick_0006_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 780,
+						"y": 220,
+						"w": 406,
+						"h": 849
+					},
+					"frame": {
+						"x": 4030,
+						"y": 5987,
+						"w": 406,
+						"h": 849
+					}
+				},
+				{
+					"filename": "sprites-rob/kick/Rob-sprite-kick_0009_Frame-009-—-Rob-2D-key0584.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 677,
+						"y": 153,
+						"w": 475,
+						"h": 915
+					},
+					"frame": {
+						"x": 1267,
+						"y": 1925,
+						"w": 475,
+						"h": 915
+					}
+				},
+				{
+					"filename": "sprites-rob/punch/Rob-sprite-punch_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 660,
+						"y": 165,
+						"w": 696,
+						"h": 895
+					},
+					"frame": {
+						"x": 3,
+						"y": 4682,
+						"w": 696,
+						"h": 895
+					}
+				},
+				{
+					"filename": "sprites-rob/punch/Rob-sprite-punch_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 161,
+						"w": 683,
+						"h": 899
+					},
+					"frame": {
+						"x": 3,
+						"y": 5581,
+						"w": 683,
+						"h": 899
+					}
+				},
+				{
+					"filename": "sprites-rob/punch/Rob-sprite-punch_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 652,
+						"y": 155,
+						"w": 458,
+						"h": 897
+					},
+					"frame": {
+						"x": 1634,
+						"y": 4680,
+						"w": 458,
+						"h": 897
+					}
+				},
+				{
+					"filename": "sprites-rob/punch/Rob-sprite-punch_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 651,
+						"y": 167,
+						"w": 459,
+						"h": 884
+					},
+					"frame": {
+						"x": 2123,
+						"y": 5541,
+						"w": 459,
+						"h": 884
+					}
+				},
+				{
+					"filename": "sprites-rob/punch/Rob-sprite-punch_0006_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 651,
+						"y": 174,
+						"w": 464,
+						"h": 879
+					},
+					"frame": {
+						"x": 2650,
+						"y": 6371,
+						"w": 464,
+						"h": 879
+					}
+				},
+				{
+					"filename": "sprites-rob/special/Rob-sprite-special_0000_Frame-005-—-Rob-2D-key0754.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 670,
+						"y": 205,
+						"w": 741,
+						"h": 868
+					},
+					"frame": {
+						"x": 3,
+						"y": 3810,
+						"w": 741,
+						"h": 868
+					}
+				},
+				{
+					"filename": "sprites-rob/special/Rob-sprite-special_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 676,
+						"y": 205,
+						"w": 742,
+						"h": 869
+					},
+					"frame": {
+						"x": 3,
+						"y": 2937,
+						"w": 742,
+						"h": 869
+					}
+				},
+				{
+					"filename": "sprites-rob/special/Rob-sprite-special_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 664,
+						"y": 182,
+						"w": 685,
+						"h": 889
+					},
+					"frame": {
+						"x": 3,
+						"y": 6484,
+						"w": 685,
+						"h": 889
+					}
+				},
+				{
+					"filename": "sprites-rob/special/Rob-sprite-special_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 664,
+						"y": 183,
+						"w": 680,
+						"h": 889
+					},
+					"frame": {
+						"x": 1746,
+						"y": 1922,
+						"w": 680,
+						"h": 889
+					}
+				},
+				{
+					"filename": "sprites-rob/special/Rob-sprite-special_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 661,
+						"y": 174,
+						"w": 467,
+						"h": 899
+					},
+					"frame": {
+						"x": 703,
+						"y": 4682,
+						"w": 467,
+						"h": 899
+					}
+				},
+				{
+					"filename": "sprites-rob/takehit/Rob-sprite-takehit_0003_Frame-004-—-Rob-2D-key0230.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 793,
+						"y": 173,
+						"w": 441,
+						"h": 879
+					},
+					"frame": {
+						"x": 3354,
+						"y": 3430,
+						"w": 441,
+						"h": 879
+					}
+				},
+				{
+					"filename": "sprites-rob/takehit/Rob-sprite-takehit_0004_Frame-004-—-Rob-2D-key0230.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 793,
+						"y": 173,
+						"w": 441,
+						"h": 879
+					},
+					"frame": {
+						"x": 2909,
+						"y": 3448,
+						"w": 441,
+						"h": 879
+					}
+				},
+				{
+					"filename": "sprites-rob/takehit/Rob-sprite-takehit_0005_Frame-003-—-Rob-2D-key0226.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 699,
+						"y": 181,
+						"w": 487,
+						"h": 850
+					},
+					"frame": {
+						"x": 4061,
+						"y": 3,
+						"w": 487,
+						"h": 850
+					}
+				},
+				{
+					"filename": "sprites-rob/takehit/Rob-sprite-takehit_0006_Frame-002-—-Rob-2D-key0224.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 700,
+						"y": 161,
+						"w": 462,
+						"h": 871
+					},
+					"frame": {
+						"x": 2964,
+						"y": 4331,
+						"w": 462,
+						"h": 871
+					}
+				},
+				{
+					"filename": "sprites-rob/takehit/Rob-sprite-takehit_0007_Frame-001-—-Rob-2D-key0194.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 706,
+						"y": 154,
+						"w": 425,
+						"h": 881
+					},
+					"frame": {
+						"x": 2535,
+						"y": 4602,
+						"w": 425,
+						"h": 881
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0000_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 660,
+						"y": 160,
+						"w": 459,
+						"h": 874
+					},
+					"frame": {
+						"x": 4014,
+						"y": 1603,
+						"w": 459,
+						"h": 874
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 156,
+						"w": 466,
+						"h": 878
+					},
+					"frame": {
+						"x": 1217,
+						"y": 2928,
+						"w": 466,
+						"h": 878
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 172,
+						"w": 466,
+						"h": 862
+					},
+					"frame": {
+						"x": 3464,
+						"y": 5188,
+						"w": 466,
+						"h": 862
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 181,
+						"w": 471,
+						"h": 853
+					},
+					"frame": {
+						"x": 3555,
+						"y": 6054,
+						"w": 471,
+						"h": 853
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 173,
+						"w": 466,
+						"h": 861
+					},
+					"frame": {
+						"x": 3934,
+						"y": 5122,
+						"w": 466,
+						"h": 861
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 165,
+						"w": 464,
+						"h": 869
+					},
+					"frame": {
+						"x": 749,
+						"y": 2937,
+						"w": 464,
+						"h": 869
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0006_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 155,
+						"w": 458,
+						"h": 879
+					},
+					"frame": {
+						"x": 3564,
+						"y": 2482,
+						"w": 458,
+						"h": 879
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0007_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 150,
+						"w": 458,
+						"h": 884
+					},
+					"frame": {
+						"x": 2188,
+						"y": 6429,
+						"w": 458,
+						"h": 884
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0008_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 149,
+						"w": 459,
+						"h": 885
+					},
+					"frame": {
+						"x": 1660,
+						"y": 5581,
+						"w": 459,
+						"h": 885
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0009_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 658,
+						"y": 150,
+						"w": 464,
+						"h": 884
+					},
+					"frame": {
+						"x": 1192,
+						"y": 5584,
+						"w": 464,
+						"h": 884
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0010_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 658,
+						"y": 158,
+						"w": 462,
+						"h": 876
+					},
+					"frame": {
+						"x": 4026,
+						"y": 2481,
+						"w": 462,
+						"h": 876
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0011_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 658,
+						"y": 159,
+						"w": 467,
+						"h": 875
+					},
+					"frame": {
+						"x": 3543,
+						"y": 1603,
+						"w": 467,
+						"h": 875
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0012_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 659,
+						"y": 154,
+						"w": 473,
+						"h": 880
+					},
+					"frame": {
+						"x": 2586,
+						"y": 5487,
+						"w": 473,
+						"h": 880
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0013_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 661,
+						"y": 151,
+						"w": 585,
+						"h": 883
+					},
+					"frame": {
+						"x": 2430,
+						"y": 1668,
+						"w": 585,
+						"h": 883
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0014_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 661,
+						"y": 150,
+						"w": 520,
+						"h": 884
+					},
+					"frame": {
+						"x": 3019,
+						"y": 1668,
+						"w": 520,
+						"h": 884
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0015_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 662,
+						"y": 153,
+						"w": 510,
+						"h": 881
+					},
+					"frame": {
+						"x": 1201,
+						"y": 6472,
+						"w": 510,
+						"h": 881
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0016_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 663,
+						"y": 151,
+						"w": 469,
+						"h": 883
+					},
+					"frame": {
+						"x": 1715,
+						"y": 6470,
+						"w": 469,
+						"h": 883
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0017_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 661,
+						"y": 193,
+						"w": 409,
+						"h": 842
+					},
+					"frame": {
+						"x": 4031,
+						"y": 6840,
+						"w": 409,
+						"h": 842
+					}
+				},
+				{
+					"filename": "sprites-rob/victory/Rob-sprite-victory_0018_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 648,
+						"y": 213,
+						"w": 448,
+						"h": 827
+					},
+					"frame": {
+						"x": 2650,
+						"y": 7254,
+						"w": 448,
+						"h": 827
+					}
+				},
+				{
+					"filename": "sprites-rob/walk/Rob-sprite-walk_0000_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 708,
+						"y": 186,
+						"w": 433,
+						"h": 859
+					},
+					"frame": {
+						"x": 3118,
+						"y": 6074,
+						"w": 433,
+						"h": 859
+					}
+				},
+				{
+					"filename": "sprites-rob/walk/Rob-sprite-walk_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 753,
+						"y": 176,
+						"w": 344,
+						"h": 866
+					},
+					"frame": {
+						"x": 1623,
+						"y": 3810,
+						"w": 344,
+						"h": 866
+					}
+				},
+				{
+					"filename": "sprites-rob/walk/Rob-sprite-walk_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 754,
+						"y": 166,
+						"w": 342,
+						"h": 866
+					},
+					"frame": {
+						"x": 4159,
+						"y": 3361,
+						"w": 342,
+						"h": 866
+					}
+				},
+				{
+					"filename": "sprites-rob/walk/Rob-sprite-walk_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 726,
+						"y": 177,
+						"w": 397,
+						"h": 864
+					},
+					"frame": {
+						"x": 3063,
+						"y": 5206,
+						"w": 397,
+						"h": 864
+					}
+				},
+				{
+					"filename": "sprites-rob/walk/Rob-sprite-walk_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 747,
+						"y": 162,
+						"w": 356,
+						"h": 879
+					},
+					"frame": {
+						"x": 3799,
+						"y": 3365,
+						"w": 356,
+						"h": 879
+					}
+				},
+				{
+					"filename": "sprites-rob/walk/Rob-sprite-walk_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 724,
+						"y": 170,
+						"w": 401,
+						"h": 868
+					},
+					"frame": {
+						"x": 748,
+						"y": 3810,
+						"w": 401,
+						"h": 868
+					}
+				},
+				{
+					"filename": "sprites-rob/walk/Rob-sprite-walk_0006_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1920,
+						"h": 1080
+					},
+					"spriteSourceSize": {
+						"x": 712,
+						"y": 167,
+						"w": 407,
+						"h": 871
+					},
+					"frame": {
+						"x": 3430,
+						"y": 4313,
+						"w": 407,
+						"h": 871
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:0ace9af3023668074cfd57963a8f8122:f4cf8ca132eaf45ec5ce8d763b5a9ebd:cc6ffd4150037ab5da4a97b209c641a4$"
+	}
+}
