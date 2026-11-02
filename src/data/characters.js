@@ -13,6 +13,11 @@ export const ROSTER = [
     thumbP2: 'assets/select/thumbnails/charselect-robgobtile-p2.png',
     portrait: 'assets/select/portraits/charselect-robgob-hero.png',
     nameImage: 'assets/select/charselect-robgob-text.png',
+    atlas: 'assets/characters/robgob/sprites-rob.json',
+    hudName: 'assets/ui/stage-UIname-robgob.png',
+    hudPhotoLeft: 'assets/ui/stage-UIphoto-robgob-left.png',
+    hudPhotoRight: 'assets/ui/stage-UIphoto-robgob-right.png',
+    winImage: 'assets/ui/stage-robgobwins-text.png',
   },
   {
     id: 'dollabills',
@@ -36,6 +41,11 @@ export const ROSTER = [
     thumbP2: 'assets/select/thumbnails/charselect-easyetile-p2.png',
     portrait: 'assets/select/portraits/charselect-easye-hero.png',
     nameImage: 'assets/select/charselect-easye-text.png',
+    atlas: 'assets/characters/easy-e/sprites-erik.json',
+    hudName: 'assets/ui/stage-UIname-easye.png',
+    hudPhotoLeft: 'assets/ui/stage-UIphoto-easye-left.png',
+    hudPhotoRight: 'assets/ui/stage-UIphoto-easye-right.png',
+    winImage: 'assets/ui/stage-easyewins-text.png',
   },
   {
     id: 'hoss',
@@ -92,6 +102,62 @@ export function rosterAssets() {
     }
     if (fighter.nameImage) {
       assets.push({ key: `${fighter.id}-name`, url: fighter.nameImage });
+    }
+  }
+
+  return assets;
+}
+
+export function fighterById(id) {
+  const fighter = ROSTER.find((entry) => entry.id === id);
+  if (!fighter) {
+    throw new Error(`Roster has no fighter "${id}".`);
+  }
+  return fighter;
+}
+
+/**
+ * Stage UI plus the atlases for the two fighters in this match.
+ * The same fighter twice loads one atlas. A fighter with no atlas throws,
+ * which is how an unfinished roster entry stays out of a match.
+ */
+export function fightAssets(ids) {
+  const assets = [
+    { type: 'image', key: 'health-bg', url: 'assets/ui/stage-UIhealth-bkg.png' },
+    { type: 'image', key: 'health-fill', url: 'assets/ui/stage-UIhealth-lifemeter.png' },
+    { type: 'image', key: 'fight-text', url: 'assets/ui/stage-fight-text.png' },
+  ];
+  const seen = new Set(assets.map((asset) => asset.key));
+
+  for (const id of ids) {
+    const fighter = fighterById(id);
+    if (!fighter.atlas) {
+      throw new Error(`${fighter.name} has no fight atlas yet.`);
+    }
+
+    if (!seen.has(fighter.id)) {
+      const slash = fighter.atlas.lastIndexOf('/') + 1;
+      assets.push({
+        type: 'atlas',
+        key: fighter.id,
+        url: fighter.atlas,
+        path: fighter.atlas.slice(0, slash),
+      });
+      seen.add(fighter.id);
+    }
+
+    const extras = [
+      [`${fighter.id}-hud-name`, fighter.hudName],
+      [`${fighter.id}-hud-left`, fighter.hudPhotoLeft],
+      [`${fighter.id}-hud-right`, fighter.hudPhotoRight],
+      [`win-${fighter.id}`, fighter.winImage],
+    ];
+    for (const [key, url] of extras) {
+      if (!url || seen.has(key)) {
+        continue;
+      }
+      assets.push({ type: 'image', key, url });
+      seen.add(key);
     }
   }
 
