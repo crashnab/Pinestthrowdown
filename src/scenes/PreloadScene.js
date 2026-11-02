@@ -1,12 +1,12 @@
 import Phaser from '../phaser.js';
-import { TITLE_ASSETS, assertUniqueAssets } from '../data/assets.js';
+import { preloadAssets, assertUniqueAssets } from '../data/assets.js';
 
 const BAR_WIDTH = 720;
 const BAR_HEIGHT = 18;
 
 /**
- * Loads the title art, shows a progress bar, then opens the title screen.
- * A missing file stays on this scene with the file name on screen.
+ * Loads the title and character-select art, shows a progress bar, then
+ * opens the title screen. A missing file stays on this scene with the file name.
  */
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
@@ -18,8 +18,10 @@ export default class PreloadScene extends Phaser.Scene {
     this.failed = [];
     this.failMessage = '';
 
+    let assets = [];
     try {
-      assertUniqueAssets(TITLE_ASSETS, 'TITLE_ASSETS');
+      assets = preloadAssets();
+      assertUniqueAssets(assets, 'preload assets');
     } catch (error) {
       this.failMessage = error instanceof Error ? error.message : String(error);
       console.error(this.failMessage);
@@ -38,7 +40,7 @@ export default class PreloadScene extends Phaser.Scene {
       console.error(`Could not load ${label}`);
     });
 
-    for (const asset of TITLE_ASSETS) {
+    for (const asset of assets) {
       this.load.image(asset.key, asset.url);
     }
   }
