@@ -1,6 +1,6 @@
 /**
- * Local two-player keys. The match will import this same map later
- * so select and the fight do not invent two different layouts.
+ * Local two-player keys. Select and the match share this map
+ * so they do not invent two different layouts.
  *
  * Names are Phaser key names: A, LEFT, ENTER, BACKSPACE.
  */
@@ -20,6 +20,32 @@ export const SELECT_KEYS = {
     down: 'DOWN',
     confirm: 'ENTER',
     cancel: 'BACKSPACE',
+  },
+};
+
+/**
+ * Match keys. Movement matches character select.
+ * Player 1 attacks with the left hand. Player 2 attacks with the keys
+ * just left of the arrows, so two people can share one keyboard.
+ */
+export const FIGHT_KEYS = {
+  p1: {
+    left: 'A',
+    right: 'D',
+    up: 'W',
+    down: 'S',
+    punch: 'F',
+    kick: 'G',
+    special: 'H',
+  },
+  p2: {
+    left: 'LEFT',
+    right: 'RIGHT',
+    up: 'UP',
+    down: 'DOWN',
+    punch: 'K',
+    kick: 'L',
+    special: 'SEMICOLON',
   },
 };
 

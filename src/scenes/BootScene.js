@@ -38,6 +38,15 @@ export default class BootScene extends Phaser.Scene {
     }
 
     console.info(`BootScene ready (${width}×${height}).`);
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('fight') === '1') {
+      this.registry.set('p1Fighter', params.get('p1') || 'easy-e');
+      this.registry.set('p2Fighter', params.get('p2') || 'robgob');
+      this.scene.start('Game');
+      return;
+    }
+
     this.scene.start('Preload');
   }
 }
