@@ -1,0 +1,1847 @@
+{
+	"textures": [
+		{
+			"image": "sprites-erik.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 5363,
+				"h": 4088
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "sprites-erik/block/Erik-sprite-block_0002_Frame-004-—-Erik-2D-key0744.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 132,
+						"w": 321,
+						"h": 580
+					},
+					"frame": {
+						"x": 2437,
+						"y": 2494,
+						"w": 321,
+						"h": 580
+					}
+				},
+				{
+					"filename": "sprites-erik/block/Erik-sprite-block_0003_Frame-003-—-Erik-2D-key0735.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 127,
+						"w": 321,
+						"h": 585
+					},
+					"frame": {
+						"x": 4636,
+						"y": 2390,
+						"w": 321,
+						"h": 585
+					}
+				},
+				{
+					"filename": "sprites-erik/block/Erik-sprite-block_0004_Frame-002-—-Erik-2D-key0726.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 107,
+						"w": 328,
+						"h": 606
+					},
+					"frame": {
+						"x": 2715,
+						"y": 1787,
+						"w": 328,
+						"h": 606
+					}
+				},
+				{
+					"filename": "sprites-erik/block/Erik-sprite-block_0005_Frame-001-—-Erik-2D-key0710.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 418,
+						"y": 102,
+						"w": 450,
+						"h": 611
+					},
+					"frame": {
+						"x": 4898,
+						"y": 1163,
+						"w": 450,
+						"h": 611
+					}
+				},
+				{
+					"filename": "sprites-erik/crouch/Erik-sprite-crouch_0001_Inserted-Image",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 265,
+						"y": 18,
+						"w": 589,
+						"h": 694
+					},
+					"frame": {
+						"x": 3,
+						"y": 1339,
+						"w": 589,
+						"h": 694
+					}
+				},
+				{
+					"filename": "sprites-erik/crouch/Erik-sprite-crouch_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 251,
+						"y": 198,
+						"w": 618,
+						"h": 516
+					},
+					"frame": {
+						"x": 4465,
+						"y": 3,
+						"w": 618,
+						"h": 516
+					}
+				},
+				{
+					"filename": "sprites-erik/crouch/Erik-sprite-crouch_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 447,
+						"y": 139,
+						"w": 358,
+						"h": 575
+					},
+					"frame": {
+						"x": 4961,
+						"y": 2366,
+						"w": 358,
+						"h": 575
+					}
+				},
+				{
+					"filename": "sprites-erik/crouch/Erik-sprite-crouch_0004_3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 121,
+						"w": 371,
+						"h": 594
+					},
+					"frame": {
+						"x": 3506,
+						"y": 2924,
+						"w": 371,
+						"h": 594
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0000_Frame-015-—-Erik-2D-key1685.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 499,
+						"y": 539,
+						"w": 349,
+						"h": 193
+					},
+					"frame": {
+						"x": 4175,
+						"y": 3867,
+						"w": 349,
+						"h": 193
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0001_Frame-014-—-Erik-2D-key1669.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 488,
+						"y": 514,
+						"w": 352,
+						"h": 218
+					},
+					"frame": {
+						"x": 3819,
+						"y": 3867,
+						"w": 352,
+						"h": 218
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0002_Frame-013-—-Erik-2D-key1657.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 459,
+						"y": 464,
+						"w": 316,
+						"h": 268
+					},
+					"frame": {
+						"x": 4505,
+						"y": 3572,
+						"w": 316,
+						"h": 268
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0003_Frame-012-—-Erik-2D-key1643.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 417,
+						"w": 241,
+						"h": 315
+					},
+					"frame": {
+						"x": 2945,
+						"y": 3608,
+						"w": 241,
+						"h": 315
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0004_Frame-011-—-Erik-2D-key1629.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 439,
+						"y": 450,
+						"w": 247,
+						"h": 282
+					},
+					"frame": {
+						"x": 1544,
+						"y": 3803,
+						"w": 247,
+						"h": 282
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0005_Frame-010-—-Erik-2D-key1617.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 495,
+						"y": 402,
+						"w": 294,
+						"h": 314
+					},
+					"frame": {
+						"x": 4825,
+						"y": 3547,
+						"w": 294,
+						"h": 314
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0006_Frame-009-—-Erik-2D-key1597.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 482,
+						"y": 421,
+						"w": 343,
+						"h": 291
+					},
+					"frame": {
+						"x": 3819,
+						"y": 3572,
+						"w": 343,
+						"h": 291
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0007_Frame-008-—-Erik-2D-key1585.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 503,
+						"y": 421,
+						"w": 335,
+						"h": 291
+					},
+					"frame": {
+						"x": 4166,
+						"y": 3572,
+						"w": 335,
+						"h": 291
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0008_Frame-007-—-Erik-2D-key1573.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 471,
+						"y": 293,
+						"w": 315,
+						"h": 418
+					},
+					"frame": {
+						"x": 2626,
+						"y": 3634,
+						"w": 315,
+						"h": 418
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0009_Frame-006-—-Erik-2D-key1561.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 272,
+						"w": 354,
+						"h": 438
+					},
+					"frame": {
+						"x": 1920,
+						"y": 3633,
+						"w": 354,
+						"h": 438
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0010_Frame-005-—-Erik-2D-key1553.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 442,
+						"y": 272,
+						"w": 344,
+						"h": 440
+					},
+					"frame": {
+						"x": 2278,
+						"y": 3634,
+						"w": 344,
+						"h": 440
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0011_Frame-004-—-Erik-2D-key1543.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 447,
+						"y": 221,
+						"w": 318,
+						"h": 491
+					},
+					"frame": {
+						"x": 3497,
+						"y": 3522,
+						"w": 318,
+						"h": 491
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0012_Frame-003-—-Erik-2D-key1537.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 450,
+						"y": 157,
+						"w": 273,
+						"h": 557
+					},
+					"frame": {
+						"x": 5087,
+						"y": 3,
+						"w": 273,
+						"h": 557
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0013_Frame-002-—-Erik-2D-key1527.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 461,
+						"y": 150,
+						"w": 306,
+						"h": 564
+					},
+					"frame": {
+						"x": 2405,
+						"y": 1926,
+						"w": 306,
+						"h": 564
+					}
+				},
+				{
+					"filename": "sprites-erik/dead/Erik-sprite-dead_0014_Frame-001-—-Erik-2D-key1505.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 449,
+						"y": 119,
+						"w": 419,
+						"h": 595
+					},
+					"frame": {
+						"x": 4862,
+						"y": 564,
+						"w": 419,
+						"h": 595
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0000_2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 124,
+						"w": 388,
+						"h": 591
+					},
+					"frame": {
+						"x": 3119,
+						"y": 2326,
+						"w": 388,
+						"h": 591
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0001_1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 131,
+						"w": 397,
+						"h": 584
+					},
+					"frame": {
+						"x": 4926,
+						"y": 1778,
+						"w": 397,
+						"h": 584
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0002_2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 124,
+						"w": 388,
+						"h": 591
+					},
+					"frame": {
+						"x": 3119,
+						"y": 2326,
+						"w": 388,
+						"h": 591
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0003_3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 121,
+						"w": 371,
+						"h": 594
+					},
+					"frame": {
+						"x": 3900,
+						"y": 2388,
+						"w": 371,
+						"h": 594
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0004_4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 125,
+						"w": 362,
+						"h": 590
+					},
+					"frame": {
+						"x": 3140,
+						"y": 2921,
+						"w": 362,
+						"h": 590
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0005_5",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 132,
+						"w": 351,
+						"h": 582
+					},
+					"frame": {
+						"x": 4254,
+						"y": 2986,
+						"w": 351,
+						"h": 582
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0006_4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 125,
+						"w": 362,
+						"h": 590
+					},
+					"frame": {
+						"x": 3140,
+						"y": 2921,
+						"w": 362,
+						"h": 590
+					}
+				},
+				{
+					"filename": "sprites-erik/idle/Erik-sprite-idle_0007_3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 446,
+						"y": 121,
+						"w": 371,
+						"h": 594
+					},
+					"frame": {
+						"x": 3900,
+						"y": 2388,
+						"w": 371,
+						"h": 594
+					}
+				},
+				{
+					"filename": "sprites-erik/jump-attack/Erik-sprite-jump-attack_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 0,
+						"w": 659,
+						"h": 664
+					},
+					"frame": {
+						"x": 3,
+						"y": 3,
+						"w": 659,
+						"h": 664
+					}
+				},
+				{
+					"filename": "sprites-erik/jump-attack/Erik-sprite-jump-attack_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 0,
+						"w": 659,
+						"h": 664
+					},
+					"frame": {
+						"x": 3,
+						"y": 671,
+						"w": 659,
+						"h": 664
+					}
+				},
+				{
+					"filename": "sprites-erik/jump-attack/Erik-sprite-jump-attack_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 0,
+						"w": 618,
+						"h": 664
+					},
+					"frame": {
+						"x": 3,
+						"y": 3419,
+						"w": 618,
+						"h": 664
+					}
+				},
+				{
+					"filename": "sprites-erik/jump-attack/Erik-sprite-jump-attack_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 18,
+						"w": 601,
+						"h": 690
+					},
+					"frame": {
+						"x": 666,
+						"y": 3,
+						"w": 601,
+						"h": 690
+					}
+				},
+				{
+					"filename": "sprites-erik/jump/Erik-sprite-jump_0000_Frame-005-—-Erik-2D-key1241.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 265,
+						"y": 19,
+						"w": 598,
+						"h": 680
+					},
+					"frame": {
+						"x": 3,
+						"y": 2735,
+						"w": 598,
+						"h": 680
+					}
+				},
+				{
+					"filename": "sprites-erik/jump/Erik-sprite-jump_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 0,
+						"w": 618,
+						"h": 664
+					},
+					"frame": {
+						"x": 596,
+						"y": 1345,
+						"w": 618,
+						"h": 664
+					}
+				},
+				{
+					"filename": "sprites-erik/jump/Erik-sprite-jump_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 266,
+						"y": 18,
+						"w": 601,
+						"h": 690
+					},
+					"frame": {
+						"x": 666,
+						"y": 3,
+						"w": 601,
+						"h": 690
+					}
+				},
+				{
+					"filename": "sprites-erik/jump/Erik-sprite-jump_0003_Frame-002-—-Erik-2D-key1216.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 265,
+						"y": 18,
+						"w": 589,
+						"h": 694
+					},
+					"frame": {
+						"x": 3,
+						"y": 1339,
+						"w": 589,
+						"h": 694
+					}
+				},
+				{
+					"filename": "sprites-erik/jump/Erik-sprite-jump_0004_Frame-001-—-Erik-2D-key1162.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 265,
+						"y": 18,
+						"w": 586,
+						"h": 694
+					},
+					"frame": {
+						"x": 3,
+						"y": 2037,
+						"w": 586,
+						"h": 694
+					}
+				},
+				{
+					"filename": "sprites-erik/kick/Erik-sprite-kick_0001_Frame-006-—-Erik-2D-key0878.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 560,
+						"y": 134,
+						"w": 349,
+						"h": 598
+					},
+					"frame": {
+						"x": 2787,
+						"y": 3006,
+						"w": 349,
+						"h": 598
+					}
+				},
+				{
+					"filename": "sprites-erik/kick/Erik-sprite-kick_0002_Frame-005-—-Erik-2D-key0868.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 569,
+						"y": 152,
+						"w": 550,
+						"h": 575
+					},
+					"frame": {
+						"x": 2328,
+						"y": 586,
+						"w": 550,
+						"h": 575
+					}
+				},
+				{
+					"filename": "sprites-erik/kick/Erik-sprite-kick_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 565,
+						"y": 140,
+						"w": 556,
+						"h": 587
+					},
+					"frame": {
+						"x": 3905,
+						"y": 3,
+						"w": 556,
+						"h": 587
+					}
+				},
+				{
+					"filename": "sprites-erik/kick/Erik-sprite-kick_0005_Frame-003-—-Erik-2D-key0855.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 435,
+						"y": 119,
+						"w": 372,
+						"h": 603
+					},
+					"frame": {
+						"x": 1544,
+						"y": 3196,
+						"w": 372,
+						"h": 603
+					}
+				},
+				{
+					"filename": "sprites-erik/kick/Erik-sprite-kick_0007_Frame-001-—-Erik-2D-key0844.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 444,
+						"y": 99,
+						"w": 361,
+						"h": 618
+					},
+					"frame": {
+						"x": 2510,
+						"y": 1165,
+						"w": 361,
+						"h": 618
+					}
+				},
+				{
+					"filename": "sprites-erik/punch/Erik-sprite-punch_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 445,
+						"y": 105,
+						"w": 609,
+						"h": 610
+					},
+					"frame": {
+						"x": 3292,
+						"y": 3,
+						"w": 609,
+						"h": 610
+					}
+				},
+				{
+					"filename": "sprites-erik/punch/Erik-sprite-punch_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 445,
+						"y": 71,
+						"w": 614,
+						"h": 644
+					},
+					"frame": {
+						"x": 666,
+						"y": 697,
+						"w": 614,
+						"h": 644
+					}
+				},
+				{
+					"filename": "sprites-erik/punch/Erik-sprite-punch_0005_Frame-004-—-Erik-2D-key1311.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 444,
+						"y": 102,
+						"w": 362,
+						"h": 613
+					},
+					"frame": {
+						"x": 4157,
+						"y": 1170,
+						"w": 362,
+						"h": 613
+					}
+				},
+				{
+					"filename": "sprites-erik/punch/Erik-sprite-punch_0007_Frame-002-—-Erik-2D-key1303.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 445,
+						"y": 98,
+						"w": 371,
+						"h": 617
+					},
+					"frame": {
+						"x": 4523,
+						"y": 1164,
+						"w": 371,
+						"h": 617
+					}
+				},
+				{
+					"filename": "sprites-erik/punch/Erik-sprite-punch_0008_Frame-001-—-Erik-2D-key1298.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 445,
+						"y": 94,
+						"w": 398,
+						"h": 620
+					},
+					"frame": {
+						"x": 2108,
+						"y": 1302,
+						"w": 398,
+						"h": 620
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0000_Frame-007-—-Erik-2D-key0693.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 447,
+						"y": 130,
+						"w": 369,
+						"h": 582
+					},
+					"frame": {
+						"x": 3881,
+						"y": 2986,
+						"w": 369,
+						"h": 582
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 448,
+						"y": 117,
+						"w": 422,
+						"h": 597
+					},
+					"frame": {
+						"x": 4098,
+						"y": 1787,
+						"w": 422,
+						"h": 597
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 442,
+						"y": 109,
+						"w": 353,
+						"h": 605
+					},
+					"frame": {
+						"x": 2762,
+						"y": 2397,
+						"w": 353,
+						"h": 605
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 442,
+						"y": 130,
+						"w": 704,
+						"h": 579
+					},
+					"frame": {
+						"x": 1271,
+						"y": 3,
+						"w": 704,
+						"h": 579
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 442,
+						"y": 130,
+						"w": 663,
+						"h": 579
+					},
+					"frame": {
+						"x": 1979,
+						"y": 3,
+						"w": 663,
+						"h": 579
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 442,
+						"y": 130,
+						"w": 642,
+						"h": 579
+					},
+					"frame": {
+						"x": 2646,
+						"y": 3,
+						"w": 642,
+						"h": 579
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0006_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 443,
+						"y": 132,
+						"w": 405,
+						"h": 579
+					},
+					"frame": {
+						"x": 2882,
+						"y": 586,
+						"w": 405,
+						"h": 579
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0007_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 414,
+						"y": 162,
+						"w": 339,
+						"h": 552
+					},
+					"frame": {
+						"x": 2444,
+						"y": 3078,
+						"w": 339,
+						"h": 552
+					}
+				},
+				{
+					"filename": "sprites-erik/special/Erik-sprite-special_0008_Frame-001-—-Erik-2D-key0471.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 445,
+						"y": 129,
+						"w": 357,
+						"h": 585
+					},
+					"frame": {
+						"x": 4275,
+						"y": 2390,
+						"w": 357,
+						"h": 585
+					}
+				},
+				{
+					"filename": "sprites-erik/takehit/Erik-sprite-takehit_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 458,
+						"y": 150,
+						"w": 303,
+						"h": 564
+					},
+					"frame": {
+						"x": 4921,
+						"y": 2979,
+						"w": 303,
+						"h": 564
+					}
+				},
+				{
+					"filename": "sprites-erik/takehit/Erik-sprite-takehit_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 458,
+						"y": 150,
+						"w": 303,
+						"h": 564
+					},
+					"frame": {
+						"x": 3190,
+						"y": 3515,
+						"w": 303,
+						"h": 564
+					}
+				},
+				{
+					"filename": "sprites-erik/takehit/Erik-sprite-takehit_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 453,
+						"y": 150,
+						"w": 308,
+						"h": 564
+					},
+					"frame": {
+						"x": 4609,
+						"y": 2979,
+						"w": 308,
+						"h": 564
+					}
+				},
+				{
+					"filename": "sprites-erik/takehit/Erik-sprite-takehit_0007_Frame-001-—-Erik-2D-key1499.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 449,
+						"y": 116,
+						"w": 416,
+						"h": 598
+					},
+					"frame": {
+						"x": 1124,
+						"y": 3241,
+						"w": 416,
+						"h": 598
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0000_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 435,
+						"y": 98,
+						"w": 495,
+						"h": 612
+					},
+					"frame": {
+						"x": 3278,
+						"y": 1170,
+						"w": 495,
+						"h": 612
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 435,
+						"y": 98,
+						"w": 495,
+						"h": 612
+					},
+					"frame": {
+						"x": 970,
+						"y": 2013,
+						"w": 495,
+						"h": 612
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 435,
+						"y": 95,
+						"w": 495,
+						"h": 615
+					},
+					"frame": {
+						"x": 605,
+						"y": 2656,
+						"w": 495,
+						"h": 615
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 435,
+						"y": 90,
+						"w": 495,
+						"h": 620
+					},
+					"frame": {
+						"x": 1609,
+						"y": 1302,
+						"w": 495,
+						"h": 620
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 435,
+						"y": 97,
+						"w": 495,
+						"h": 615
+					},
+					"frame": {
+						"x": 625,
+						"y": 3275,
+						"w": 495,
+						"h": 615
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 435,
+						"y": 134,
+						"w": 513,
+						"h": 579
+					},
+					"frame": {
+						"x": 1920,
+						"y": 2496,
+						"w": 513,
+						"h": 579
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0006_7",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 159,
+						"w": 520,
+						"h": 566
+					},
+					"frame": {
+						"x": 4338,
+						"y": 594,
+						"w": 520,
+						"h": 566
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0007_6",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 175,
+						"w": 520,
+						"h": 550
+					},
+					"frame": {
+						"x": 1920,
+						"y": 3079,
+						"w": 520,
+						"h": 550
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0008_5",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 437,
+						"y": 177,
+						"w": 533,
+						"h": 536
+					},
+					"frame": {
+						"x": 3047,
+						"y": 1786,
+						"w": 533,
+						"h": 536
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0009_4",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 167,
+						"w": 527,
+						"h": 566
+					},
+					"frame": {
+						"x": 1874,
+						"y": 1926,
+						"w": 527,
+						"h": 566
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0010_3",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 161,
+						"w": 510,
+						"h": 552
+					},
+					"frame": {
+						"x": 3584,
+						"y": 1786,
+						"w": 510,
+						"h": 552
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0011_2",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 164,
+						"w": 531,
+						"h": 549
+					},
+					"frame": {
+						"x": 3291,
+						"y": 617,
+						"w": 531,
+						"h": 549
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0012_1",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 163,
+						"w": 508,
+						"h": 549
+					},
+					"frame": {
+						"x": 3826,
+						"y": 617,
+						"w": 508,
+						"h": 549
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0013_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 134,
+						"w": 385,
+						"h": 578
+					},
+					"frame": {
+						"x": 3511,
+						"y": 2342,
+						"w": 385,
+						"h": 578
+					}
+				},
+				{
+					"filename": "sprites-erik/victory/Erik-sprite-victory_0014_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 438,
+						"y": 111,
+						"w": 398,
+						"h": 601
+					},
+					"frame": {
+						"x": 4524,
+						"y": 1785,
+						"w": 398,
+						"h": 601
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0000_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 468,
+						"y": 5,
+						"w": 518,
+						"h": 712
+					},
+					"frame": {
+						"x": 1284,
+						"y": 586,
+						"w": 518,
+						"h": 712
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0001_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 473,
+						"y": 103,
+						"w": 376,
+						"h": 612
+					},
+					"frame": {
+						"x": 3777,
+						"y": 1170,
+						"w": 376,
+						"h": 612
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0002_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 455,
+						"y": 92,
+						"w": 387,
+						"h": 624
+					},
+					"frame": {
+						"x": 1218,
+						"y": 1345,
+						"w": 387,
+						"h": 624
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0003_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 441,
+						"y": 104,
+						"w": 399,
+						"h": 612
+					},
+					"frame": {
+						"x": 2875,
+						"y": 1169,
+						"w": 399,
+						"h": 612
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0004_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 473,
+						"y": 104,
+						"w": 373,
+						"h": 607
+					},
+					"frame": {
+						"x": 1543,
+						"y": 2585,
+						"w": 373,
+						"h": 607
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0005_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 478,
+						"y": 101,
+						"w": 373,
+						"h": 615
+					},
+					"frame": {
+						"x": 593,
+						"y": 2037,
+						"w": 373,
+						"h": 615
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0006_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 413,
+						"y": 107,
+						"w": 435,
+						"h": 608
+					},
+					"frame": {
+						"x": 1104,
+						"y": 2629,
+						"w": 435,
+						"h": 608
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0007_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 470,
+						"y": 5,
+						"w": 518,
+						"h": 712
+					},
+					"frame": {
+						"x": 1806,
+						"y": 586,
+						"w": 518,
+						"h": 712
+					}
+				},
+				{
+					"filename": "sprites-erik/walk/Erik-sprite-walk_0008_New-group",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 1306,
+						"h": 734
+					},
+					"spriteSourceSize": {
+						"x": 449,
+						"y": 107,
+						"w": 401,
+						"h": 608
+					},
+					"frame": {
+						"x": 1469,
+						"y": 1973,
+						"w": 401,
+						"h": 608
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:f281348c68fef24683ccc85161765d33:0e509408d1ef383dce0d64ed6c065222:52cfc1a9fc2c974e1f347c102de52003$"
+	}
+}
