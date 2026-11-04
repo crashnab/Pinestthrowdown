@@ -4,7 +4,7 @@ import { fighterById, fightAssets } from '../data/characters.js';
 import { FIGHT_KEYS } from '../systems/controls.js';
 import RoundManager from '../systems/RoundManager.js';
 import { cameraScroll } from '../systems/cameraRig.js';
-import Fighter, { createFighterAnimations, prepareFighter } from '../entities/Fighter.js';
+import Fighter, { FIGHTER_GRAVITY, createFighterAnimations, prepareFighter } from '../entities/Fighter.js';
 import FightHud from '../ui/FightHud.js';
 
 const SEPARATION = 100;
@@ -80,7 +80,7 @@ export default class GameScene extends Phaser.Scene {
       return;
     }
 
-    this.physics.world.gravity.y = 2200;
+    this.physics.world.gravity.y = FIGHTER_GRAVITY;
     this.physics.world.setBounds(0, 0, CONCERT_STAGE.worldWidth, CONCERT_STAGE.worldHeight);
     if (new URLSearchParams(window.location.search).get('debug') === '1') {
       this.physics.world.createDebugGraphic();
@@ -146,8 +146,7 @@ export default class GameScene extends Phaser.Scene {
       this.hud.hideIntro();
     }
 
-    this.p1.facesOpponent();
-    this.p2.facesOpponent();
+    this.faceEachOther();
     this.p1.handleInput(input.p1, fighting);
     this.p2.handleInput(input.p2, fighting);
     this.resolveHits(input);
@@ -252,8 +251,22 @@ export default class GameScene extends Phaser.Scene {
     fighter.grounded = true;
   }
 
+  /**
+   * Compare the two foot positions every update. The fighter on the
+   * right faces left, and the fighter on the left faces right, so a
+   * jump that crosses behind the opponent turns both of them around.
+   */
+  faceEachOther() {
+    const p1OnRight = this.p1.x > this.p2.x;
+    this.p1.turnTo(p1OnRight);
+    this.p2.turnTo(!p1OnRight);
+  }
+
   separateFighters() {
     if (this.p1.state === 'dead' || this.p2.state === 'dead') {
+      return;
+    }
+    if (this.passesOver(this.p1, this.p2) || this.passesOver(this.p2, this.p1)) {
       return;
     }
     const gap = this.p2.x - this.p1.x;
@@ -265,6 +278,15 @@ export default class GameScene extends Phaser.Scene {
     const direction = gap >= 0 ? 1 : -1;
     this.p1.x -= push * direction;
     this.p2.x += push * direction;
+  }
+
+  /** True when `jumper`'s feet are above the other fighter's shoulders. */
+  passesOver(jumper, other) {
+    if (jumper.grounded === true) {
+      return false;
+    }
+    const shoulders = other.y - other.visibleHeight * 0.72;
+    return jumper.y < shoulders;
   }
 
   keepOnStage(fighter) {
@@ -321,6 +343,8 @@ export default class GameScene extends Phaser.Scene {
     root.p1Bottom = String(Math.round(this.p1.body.bottom));
     root.p1State = this.p1.state;
     root.p2State = this.p2.state;
+    root.p1Flip = this.p1.flipX ? '1' : '0';
+    root.p2Flip = this.p2.flipX ? '1' : '0';
   }
 
   showMessage(message) {

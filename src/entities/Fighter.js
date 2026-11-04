@@ -4,7 +4,17 @@ import { animationFrames } from './frameOrder.js';
 const TARGET_HEIGHT = 560;
 const MOVE_SPEED = 360;
 const BACK_SPEED = 160;
-const JUMP_VELOCITY = -980;
+
+/**
+ * A standing fighter is about 560px tall. The old hop rose ~220px, so
+ * nobody could jump over anyone. This launch is fast, and the feet
+ * rise about 580px, which is enough to pass over the other fighter.
+ * Gravity is paired with it so the jump comes back down quickly. The jump drawing
+ * is taller than the idle pose, so the head can touch the top of the
+ * stage at the peak.
+ */
+export const JUMP_VELOCITY = -2940;
+export const FIGHTER_GRAVITY = 7000;
 
 const ATTACKS = {
   punch: { anim: 'punch', damage: 10, reach: 240, hitStart: 0.28, hitEnd: 0.62 },
@@ -124,7 +134,7 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     this.y = floorY + definition.footPad;
     this.body.setSize(definition.bodyBox.w, definition.bodyBox.h);
     this.body.setOffset(definition.bodyBox.x, definition.bodyBox.y);
-    this.body.setMaxVelocity(720, 1500);
+    this.body.setMaxVelocity(900, 3400);
     this.playAnim('idle', true);
 
     this.on('animationcomplete', (anim) => this.onClipComplete(anim));
@@ -172,6 +182,7 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
 
     if (input.jump && this.onFloor()) {
       this.body.setVelocityY(JUMP_VELOCITY);
+      this.body.setVelocityX(this.groundSpeed(input));
       this.state = 'jump';
       this.playAnim('jump', true);
       return;
@@ -180,7 +191,7 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     if (this.isHoldingBack(input) && this.onFloor()) {
       this.state = 'block';
       this.playAnim('block');
-      this.body.setVelocityX(this.facing() === 1 ? -BACK_SPEED : BACK_SPEED);
+      this.body.setVelocityX(-this.forwardSign() * BACK_SPEED);
       return;
     }
 
@@ -193,15 +204,46 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
 
     if (!this.onFloor()) {
       this.state = 'jump';
+      // Left and right stay screen directions in the air, so holding
+      // the jump-in key keeps carrying you over. Forward and back
+      // swap only after the landing, when the sides have changed.
+      if (input.left !== input.right) {
+        this.body.setVelocityX(input.left ? -MOVE_SPEED : MOVE_SPEED);
+      }
       return;
     }
 
-    let speed = 0;
-    if (input.left) speed -= MOVE_SPEED;
-    if (input.right) speed += MOVE_SPEED;
-    this.body.setVelocityX(speed);
-    this.state = speed === 0 ? 'idle' : 'walk';
+    this.body.setVelocityX(this.groundSpeed(input));
+    const moving = input.left !== input.right;
+    this.state = moving ? 'walk' : 'idle';
     this.playAnim(this.state);
+  }
+
+  /**
+   * 1 when the opponent is to the right, -1 when they are to the left.
+   * Crossing behind them flips this, and forward/back follow it.
+   */
+  forwardSign() {
+    if (!this.opponent || this.opponent.x === this.x) {
+      return this.flipX ? -1 : 1;
+    }
+    return this.opponent.x > this.x ? 1 : -1;
+  }
+
+  /** Ground speed. Toward the opponent is forward. Away is the slow back step. */
+  groundSpeed(input) {
+    if (this.holdingToward(input)) {
+      return this.forwardSign() * MOVE_SPEED;
+    }
+    if (this.isHoldingBack(input)) {
+      return -this.forwardSign() * BACK_SPEED;
+    }
+    return 0;
+  }
+
+  holdingToward(input) {
+    const forward = this.forwardSign();
+    return forward === 1 ? input.right && !input.left : input.left && !input.right;
   }
 
   startAttack(name) {
@@ -232,11 +274,15 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     this.attackHit = true;
   }
 
-  facesOpponent() {
-    if (!this.opponent || this.state === 'attack' || this.state === 'hit' || this.state === 'dead') {
+  /**
+   * Face left when `faceLeft` is true. Called every update from the
+   * x comparison, including while a fighter is jumping over the other.
+   */
+  turnTo(faceLeft) {
+    if (this.state === 'dead' || this.flipX === faceLeft) {
       return;
     }
-    this.setFlipX(this.opponent.x < this.x);
+    this.setFlipX(faceLeft);
     this.syncBodyOffset();
   }
 
@@ -254,11 +300,8 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     if (!this.opponent) {
       return false;
     }
-    const backIsLeft = this.opponent.x > this.x;
-    if (backIsLeft) {
-      return input.left && !input.right;
-    }
-    return input.right && !input.left;
+    const forward = this.forwardSign();
+    return forward === 1 ? input.left && !input.right : input.right && !input.left;
   }
 
   takeHit(fromLeft) {
@@ -268,7 +311,7 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     this.state = 'hit';
     this.attack = null;
     this.playAnim('takehit', true);
-    this.body.setVelocity((fromLeft ? 1 : -1) * 380, -160);
+    this.body.setVelocity((fromLeft ? 1 : -1) * 380, -880);
   }
 
   ko() {
