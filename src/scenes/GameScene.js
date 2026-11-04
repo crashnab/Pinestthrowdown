@@ -111,7 +111,7 @@ export default class GameScene extends Phaser.Scene {
     this.hud = new FightHud(this, p1Def, p2Def);
     this.hud.showFight();
     this.hint = this.add
-      .text(960, 1044, 'P1  F PUNCH   G KICK   H SPECIAL          P2  K PUNCH   L KICK   ; SPECIAL', {
+      .text(960, 1044, 'P1  F PUNCH   G KICK   H SPECIAL   B BLOCK          P2  K PUNCH   L KICK   ; SPECIAL   O BLOCK', {
         fontFamily: 'system-ui, sans-serif',
         fontSize: '20px',
         color: '#f3ecdf',
@@ -180,7 +180,7 @@ export default class GameScene extends Phaser.Scene {
 
   readInput(id) {
     if (!this.keys) {
-      return { left: false, right: false, jump: false, crouch: false, punch: false, kick: false, special: false };
+      return { left: false, right: false, jump: false, crouch: false, punch: false, kick: false, special: false, block: false };
     }
     const keys = this.keys[id];
     const held = (key) => Boolean(key && key.isDown);
@@ -193,6 +193,7 @@ export default class GameScene extends Phaser.Scene {
       punch: tapped(keys.punch),
       kick: tapped(keys.kick),
       special: tapped(keys.special),
+      block: held(keys.block),
     };
   }
 
@@ -217,7 +218,10 @@ export default class GameScene extends Phaser.Scene {
       return;
     }
 
-    const blocking = defender.state === 'block' || (defender.onFloor() && defender.isHoldingBack(defenderInput) && defender.state !== 'attack');
+    const blocking = defender.onFloor()
+      && defenderInput.block
+      && defender.state !== 'attack'
+      && defender.state !== 'hit';
     const damage = blocking ? Math.max(1, Math.round(attack.damage * 0.2)) : attack.damage;
     attacker.markAttackHit();
     const killed = this.round.hurt(defender.playerId, damage);
@@ -227,7 +231,7 @@ export default class GameScene extends Phaser.Scene {
     }
     if (blocking) {
       defender.state = 'block';
-      defender.playAnim('block', true);
+      defender.playAnim('block');
       defender.body.setVelocityX(attacker.facing() * 140);
       return;
     }
@@ -245,7 +249,9 @@ export default class GameScene extends Phaser.Scene {
     }
 
     const drop = bottom - floor;
-    fighter.y -= drop;
+    // Move the body only. The physics step copies that move onto the
+    // sprite once. Moving the sprite here as well made it correct twice
+    // and the fighter shimmered up and down every frame.
     fighter.body.y -= drop;
     fighter.body.velocity.y = 0;
     fighter.grounded = true;

@@ -21,10 +21,10 @@ On select, Player 1 starts on Easy E and Player 2 starts on RobGob.
 
 Easy E and RobGob can be readied. The other five can be highlighted, and the card says they are not in this demo yet. When both are ready, the concert match starts.
 
-The match is one 60-second round. Walk with the same direction keys. Jump with up. Holding forward and jumping carries you over the other fighter, and both fighters turn to face each other after the cross. Crouch with down. Hold back to block. Toward and away follow whichever side you are on.
+The match is one 60-second round. Walk with the same direction keys. Forward walks toward the other fighter. Back walks away and plays the walk cycle in reverse. Jump with up. Holding forward and jumping carries you over the other fighter, and both fighters turn to face each other after the cross. Crouch with down. Block is its own key, and holding back does not block.
 
-- Player 1 attacks: F punch, G kick, H special
-- Player 2 attacks: K punch, L kick, ; special
+- Player 1: F punch, G kick, H special, B block
+- Player 2: K punch, L kick, ; special, O block
 
 A fighter at 0 health loses. If the clock runs out, the higher health wins. Press Start (or either punch button) after the win card to return to character select.
 
