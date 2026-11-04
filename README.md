@@ -70,7 +70,7 @@ assets/select/charselect-bkg.png
 assets/select/charselect-chooseyourfighter-text.png
 assets/select/portraits/             charselect-<name>-hero.png for all 7
 assets/select/charselect-<name>-text.png
-assets/select/thumbnails/            p1 (pink frame) and p2 (orange frame) for all 7
+assets/select/thumbnails/            charselect-<name>tile.png, tile-p1.png, and tile-p2.png for all 7
 ```
 
 The match loads the HUD, the concert stage, and both character atlases. The atlases are TexturePacker's multi-pack JSON (`textures` array), loaded with `this.load.multiatlas`. Keep each `.png` next to its `.json`. The image name inside the JSON is `sprites-erik.png` and `sprites-rob.png`.

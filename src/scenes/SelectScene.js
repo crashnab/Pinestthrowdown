@@ -70,7 +70,6 @@ export default class SelectScene extends Phaser.Scene {
     };
 
     this.slots = this.createSlots();
-    this.cursors = this.add.graphics().setDepth(5);
     this.createNames();
 
     this.hint = this.add
@@ -99,7 +98,7 @@ export default class SelectScene extends Phaser.Scene {
       for (let col = 0; col < count; col += 1) {
         const fighter = ROSTER[index];
         const x = originX + CELL_W / 2 + col * (CELL_W + GAP_X);
-        const image = this.add.image(x, y, `${fighter.id}-thumb-p2`).setDepth(4);
+        const image = this.add.image(x, y, `${fighter.id}-thumb-default`).setDepth(4);
         slots.push({ x, y, fighter, image });
         index += 1;
       }
@@ -209,15 +208,25 @@ export default class SelectScene extends Phaser.Scene {
   }
 
   refresh() {
-    for (const slot of this.slots) {
-      const p1Here = this.slots[this.players.p1.index] === slot;
-      const suffix = p1Here ? 'p1' : 'p2';
-      slot.image.setTexture(`${slot.fighter.id}-thumb-${suffix}`);
-    }
+    const p1Index = this.players.p1.index;
+    const p2Index = this.players.p2.index;
+
+    this.slots.forEach((slot, index) => {
+      // Both cursors on one thumbnail use Player 1's tile.
+      let state = 'default';
+      if (index === p1Index) {
+        state = 'p1';
+      } else if (index === p2Index) {
+        state = 'p2';
+      }
+      const key = `${slot.fighter.id}-thumb-${state}`;
+      if (slot.image.texture.key !== key) {
+        slot.image.setTexture(key);
+      }
+    });
 
     this.showSide('p1');
     this.showSide('p2');
-    this.drawCursors();
     this.publish();
   }
 
@@ -251,22 +260,6 @@ export default class SelectScene extends Phaser.Scene {
     }
   }
 
-  drawCursors() {
-    this.cursors.clear();
-
-    for (const id of ['p1', 'p2']) {
-      const player = this.players[id];
-      const slot = this.slots[player.index];
-      // Player 2's tile is already orange, so that cursor sits farther out in gold.
-      const pad = id === 'p1' ? 8 : 18;
-      const color = id === 'p1' ? PLAYER_STYLE.p1.tint : 0xffe14a;
-      const width = slot.image.displayWidth + pad * 2;
-      const height = slot.image.displayHeight + pad * 2;
-      this.cursors.lineStyle(id === 'p1' ? 5 : 6, color, 1);
-      this.cursors.strokeRect(slot.x - width / 2, slot.y - height / 2, width, height);
-    }
-  }
-
   publish() {
     const root = document.documentElement.dataset;
     const p1 = ROSTER[this.players.p1.index];
@@ -276,6 +269,9 @@ export default class SelectScene extends Phaser.Scene {
     root.p2 = p2.id;
     root.p1Locked = this.players.p1.locked ? 'yes' : 'no';
     root.p2Locked = this.players.p2.locked ? 'yes' : 'no';
+    root.tiles = this.slots
+      .map((slot) => slot.image.texture.key.replace(`${slot.fighter.id}-thumb-`, ''))
+      .join(',');
     root.select = this.players.p1.locked && this.players.p2.locked ? 'ready' : 'choosing';
 
     this.registry.set('p1Fighter', this.players.p1.locked ? p1.id : '');

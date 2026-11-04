@@ -5,15 +5,16 @@
  * can be taken into a match.
  *
  * The large side art is `charselect-<name>-hero.png` and
- * `charselect-<name>-text.png`. The grid still uses the small tiles.
+ * `charselect-<name>-text.png`. Each grid thumbnail has three files:
+ * `charselect-<tile>tile.png`, `charselect-<tile>tile-p1.png`, and
+ * `charselect-<tile>tile-p2.png`.
  */
 export const ROSTER = [
   {
     id: 'robgob',
     name: 'ROBGOB',
     playable: true,
-    thumbP1: 'assets/select/thumbnails/charselect-robgobtile-p1.png',
-    thumbP2: 'assets/select/thumbnails/charselect-robgobtile-p2.png',
+    tile: 'robgob',
     portrait: 'assets/select/portraits/charselect-robgob-hero.png',
     nameImage: 'assets/select/charselect-robgob-text.png',
     atlas: 'assets/characters/robgob/sprites-rob.json',
@@ -26,8 +27,7 @@ export const ROSTER = [
     id: 'dollabills',
     name: 'DOLLA BILLS',
     playable: false,
-    thumbP1: 'assets/select/thumbnails/charselect-dollabills-p1.png',
-    thumbP2: 'assets/select/thumbnails/charselect-dollabillstile-p2.png',
+    tile: 'dollabills',
     portrait: 'assets/select/portraits/charselect-dollabills-hero.png',
     nameImage: 'assets/select/charselect-dollabills-text.png',
   },
@@ -35,8 +35,7 @@ export const ROSTER = [
     id: 'fluff',
     name: 'FLUFF',
     playable: false,
-    thumbP1: 'assets/select/thumbnails/charselect-flufftile-p1.png',
-    thumbP2: 'assets/select/thumbnails/charselect-flufftile-p2.png',
+    tile: 'fluff',
     portrait: 'assets/select/portraits/charselect-fluff-hero.png',
     nameImage: 'assets/select/charselect-fluff-text.png',
   },
@@ -44,8 +43,7 @@ export const ROSTER = [
     id: 'easy-e',
     name: 'EASY E',
     playable: true,
-    thumbP1: 'assets/select/thumbnails/charselect-easyetile-p1.png',
-    thumbP2: 'assets/select/thumbnails/charselect-easyetile-p2.png',
+    tile: 'easye',
     portrait: 'assets/select/portraits/charselect-easye-hero.png',
     nameImage: 'assets/select/charselect-easye-text.png',
     atlas: 'assets/characters/easy-e/sprites-erik.json',
@@ -58,8 +56,7 @@ export const ROSTER = [
     id: 'hoss',
     name: 'HOSS',
     playable: false,
-    thumbP1: 'assets/select/thumbnails/charselect-hosstile-p1.png',
-    thumbP2: 'assets/select/thumbnails/charselect-hosstile-p2.png',
+    tile: 'hoss',
     portrait: 'assets/select/portraits/charselect-hoss-hero.png',
     nameImage: 'assets/select/charselect-hoss-text.png',
   },
@@ -67,8 +64,7 @@ export const ROSTER = [
     id: 'fels',
     name: 'FELS',
     playable: false,
-    thumbP1: 'assets/select/thumbnails/charselect-felstile-p1.png',
-    thumbP2: 'assets/select/thumbnails/charselect-felstile-p2.png',
+    tile: 'fels',
     portrait: 'assets/select/portraits/charselect-fels-hero.png',
     nameImage: 'assets/select/charselect-fels-text.png',
   },
@@ -76,8 +72,7 @@ export const ROSTER = [
     id: 'naptime',
     name: 'NAPTIME',
     playable: false,
-    thumbP1: 'assets/select/thumbnails/charselect-naptimetile-p1.png',
-    thumbP2: 'assets/select/thumbnails/charselect-naptimetile-p2.png',
+    tile: 'naptime',
     portrait: 'assets/select/portraits/charselect-naptime-hero.png',
     nameImage: 'assets/select/charselect-naptime-text.png',
   },
@@ -103,10 +98,19 @@ export function rosterSlot(index) {
   return { row: 1, col: index - TOP_ROW };
 }
 
+const TILE_STATES = ['default', 'p1', 'p2'];
+
+/** `charselect-<tile>tile.png`, plus `-p1` and `-p2` when a cursor is on it. */
+export function tileUrl(tile, state) {
+  const suffix = state === 'default' ? '' : `-${state}`;
+  return `assets/select/thumbnails/charselect-${tile}tile${suffix}.png`;
+}
+
 /**
  * Texture keys and file paths for the grid tiles, the large side portraits,
  * and the name graphics. Preload loads this whole list.
  * Portraits use the `-hero.png` files. Names use the `-text.png` files.
+ * Each fighter preloads the plain tile and both player tiles.
  */
 export function rosterAssets() {
   const assets = [];
@@ -118,9 +122,16 @@ export function rosterAssets() {
     if (!fighter.nameImage || !fighter.nameImage.endsWith('-text.png')) {
       throw new Error(`${fighter.name} needs a -text.png name graphic.`);
     }
+    if (!fighter.tile) {
+      throw new Error(`${fighter.name} needs a thumbnail name.`);
+    }
 
-    assets.push({ key: `${fighter.id}-thumb-p1`, url: fighter.thumbP1 });
-    assets.push({ key: `${fighter.id}-thumb-p2`, url: fighter.thumbP2 });
+    for (const state of TILE_STATES) {
+      assets.push({
+        key: `${fighter.id}-thumb-${state}`,
+        url: tileUrl(fighter.tile, state),
+      });
+    }
     assets.push({ key: `${fighter.id}-portrait`, url: fighter.portrait });
     assets.push({ key: `${fighter.id}-name`, url: fighter.nameImage });
   }
