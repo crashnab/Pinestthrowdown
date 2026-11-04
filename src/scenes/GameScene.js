@@ -111,7 +111,7 @@ export default class GameScene extends Phaser.Scene {
     this.hud = new FightHud(this, p1Def, p2Def);
     this.hud.showFight();
     this.hint = this.add
-      .text(960, 1044, 'P1  F PUNCH   G KICK   H SPECIAL   B BLOCK          P2  K PUNCH   L KICK   ; SPECIAL   O BLOCK', {
+      .text(960, 1044, 'P1  F PUNCH   G KICK   H SPECIAL   E BLOCK          P2  K PUNCH   L KICK   ; SPECIAL   / BLOCK', {
         fontFamily: 'system-ui, sans-serif',
         fontSize: '20px',
         color: '#f3ecdf',

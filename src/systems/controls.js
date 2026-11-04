@@ -27,7 +27,7 @@ export const SELECT_KEYS = {
  * Match keys. Movement matches character select.
  * Player 1 attacks with the left hand. Player 2 attacks with the keys
  * just left of the arrows, so two people can share one keyboard.
- * Block is its own key: B for player 1, O for player 2.
+ * Block is its own key: E for player 1, / for player 2.
  */
 export const FIGHT_KEYS = {
   p1: {
@@ -38,7 +38,7 @@ export const FIGHT_KEYS = {
     punch: 'F',
     kick: 'G',
     special: 'H',
-    block: 'B',
+    block: 'E',
   },
   p2: {
     left: 'LEFT',
@@ -48,7 +48,7 @@ export const FIGHT_KEYS = {
     punch: 'K',
     kick: 'L',
     special: 'SEMICOLON',
-    block: 'O',
+    block: 'FORWARD_SLASH',
   },
 };
 
