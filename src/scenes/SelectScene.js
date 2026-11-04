@@ -4,8 +4,9 @@ import { PLAYER_STYLE, SELECT_KEYS } from '../systems/controls.js';
 
 const CELL_W = 190;
 const CELL_H = 224;
-const GAP_X = 22;
-const GAP_Y = 28;
+// Half the space that used to show between thumbnail edges.
+const GAP_X = 9;
+const GAP_Y = 12;
 const GRID_TOP = 348;
 const VIEW_WIDTH = 1920;
 const EDGE_PAD = 80;
