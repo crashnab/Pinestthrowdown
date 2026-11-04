@@ -7,7 +7,10 @@ const CELL_H = 224;
 const GAP_X = 22;
 const GAP_Y = 28;
 const GRID_TOP = 348;
-const NAME_CROP = 78;
+const VIEW_WIDTH = 1920;
+const EDGE_PAD = 80;
+const PORTRAIT_BOTTOM = 800;
+const NAME_GAP = 80;
 
 const DOWN_FROM_TOP = [4, 4, 5, 6];
 const UP_FROM_BOTTOM = [0, 2, 3];
@@ -54,12 +57,16 @@ export default class SelectScene extends Phaser.Scene {
     this.add.image(960, 156, 'select-title').setDepth(6);
 
     this.portraits = {
-      p1: this.add.image(0, 168, 'easy-e-portrait').setOrigin(0, 0).setDepth(1),
-      p2: this.add.image(1920, 168, 'robgob-portrait').setOrigin(1, 0).setDepth(1),
-    };
-    this.fallbacks = {
-      p1: this.add.image(300, 530, 'easy-e-thumb-p1').setDepth(2).setVisible(false).setDisplaySize(420, 500),
-      p2: this.add.image(1620, 530, 'robgob-thumb-p2').setDepth(2).setVisible(false).setDisplaySize(420, 500),
+      p1: this.add
+        .image(EDGE_PAD, PORTRAIT_BOTTOM, 'easy-e-portrait')
+        .setOrigin(0, 1)
+        .setFlipX(false)
+        .setDepth(1),
+      p2: this.add
+        .image(VIEW_WIDTH - EDGE_PAD, PORTRAIT_BOTTOM, 'robgob-portrait')
+        .setOrigin(1, 1)
+        .setFlipX(true)
+        .setDepth(1),
     };
 
     this.slots = this.createSlots();
@@ -102,30 +109,17 @@ export default class SelectScene extends Phaser.Scene {
   }
 
   createNames() {
-    const spots = {
-      p1: { x: 300, y: 908 },
-      p2: { x: 1630, y: 908 },
-    };
     this.nameImages = {};
-    this.nameTexts = {};
     this.subLabels = {};
 
     for (const id of ['p1', 'p2']) {
-      const spot = spots[id];
       this.nameImages[id] = this.add
-        .image(spot.x, spot.y, 'easy-e-name')
+        .image(0, 0, 'easy-e-name')
         .setOrigin(0.5, 0)
-        .setDepth(7);
-      this.nameTexts[id] = this.add
-        .text(spot.x, spot.y, '', {
-          fontFamily: 'Impact, "Arial Black", sans-serif',
-          fontSize: '52px',
-          color: '#ffffff',
-        })
-        .setOrigin(0.5, 0)
+        .setFlipX(false)
         .setDepth(7);
       this.subLabels[id] = this.add
-        .text(spot.x, spot.y + 84, PLAYER_STYLE[id].label, {
+        .text(0, 0, PLAYER_STYLE[id].label, {
           fontFamily: 'Impact, "Arial Black", sans-serif',
           fontSize: '28px',
           color: PLAYER_STYLE[id].color,
@@ -232,34 +226,19 @@ export default class SelectScene extends Phaser.Scene {
     const fighter = ROSTER[player.index];
     const style = PLAYER_STYLE[id];
     const portrait = this.portraits[id];
-    const fallback = this.fallbacks[id];
 
-    if (fighter.portrait) {
-      portrait.setTexture(`${fighter.id}-portrait`);
-      portrait.setVisible(true);
-      fallback.setVisible(false);
-    } else {
-      portrait.setVisible(false);
-      fallback.setTexture(`${fighter.id}-thumb-${id === 'p1' ? 'p1' : 'p2'}`);
-      fallback.setDisplaySize(420, 500);
-      fallback.setVisible(true);
-    }
+    portrait.setTexture(`${fighter.id}-portrait`);
+    portrait.setFlipX(id === 'p2');
 
     const nameImage = this.nameImages[id];
-    const nameText = this.nameTexts[id];
-    if (fighter.nameImage) {
-      nameImage.setTexture(`${fighter.id}-name`);
-      const source = this.textures.get(`${fighter.id}-name`).getSourceImage();
-      nameImage.setCrop(0, 0, source.width, Math.min(NAME_CROP, source.height));
-      nameImage.setVisible(true);
-      nameText.setVisible(false);
-    } else {
-      nameImage.setVisible(false);
-      nameText.setVisible(true);
-      nameText.setText(fighter.name);
-    }
+    nameImage.setTexture(`${fighter.id}-name`);
+    nameImage.setFlipX(false);
+    const half = portrait.displayWidth / 2;
+    const centerX = id === 'p1' ? portrait.x + half : portrait.x - half;
+    nameImage.setPosition(centerX, portrait.y + NAME_GAP);
 
     const sub = this.subLabels[id];
+    sub.setPosition(centerX, nameImage.y + nameImage.displayHeight + 12);
     if (!fighter.playable) {
       sub.setText('NOT IN THIS DEMO');
       sub.setColor('#c5cede');
