@@ -3,7 +3,6 @@ import { animationFrames } from './frameOrder.js';
 
 const TARGET_HEIGHT = 560;
 const MOVE_SPEED = 360;
-const BACK_SPEED = 160;
 
 /**
  * A standing fighter is about 560px tall. The old hop rose ~220px, so
@@ -144,15 +143,31 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     this.opponent = opponent;
   }
 
-  playAnim(name, restart = false) {
+  /**
+   * Play a clip once when the pose changes.
+   * `play(key, true)` is Phaser's ignoreIfPlaying flag, so the update
+   * loop can ask for the same pose every frame without restarting it.
+   * A finished one-shot (jump, punch, hit, block) stays on its last
+   * frame until a different pose is requested.
+   */
+  playAnim(name, restart = false, reverse = false) {
     const key = `${this.def.id}-${name}`;
     if (!this.scene.anims.exists(key)) {
       return;
     }
-    if (!restart && this.anims.currentAnim?.key === key) {
+    const anims = this.anims;
+    const sameClip = anims.currentAnim?.key === key;
+    const sameDir = anims.inReverse === reverse;
+    // ignoreIfPlaying does not cover a clip that already finished.
+    // Hold that last frame until a different pose is requested.
+    if (!restart && sameClip && sameDir && !anims.isPlaying) {
       return;
     }
-    this.play(key);
+    if (reverse) {
+      anims.playReverse(key, !restart && sameDir);
+      return;
+    }
+    anims.play(key, !restart && sameDir);
   }
 
   onFloor() {
@@ -188,10 +203,10 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
       return;
     }
 
-    if (this.isHoldingBack(input) && this.onFloor()) {
+    if (input.block && this.onFloor()) {
       this.state = 'block';
       this.playAnim('block');
-      this.body.setVelocityX(-this.forwardSign() * BACK_SPEED);
+      this.body.setVelocityX(0);
       return;
     }
 
@@ -205,8 +220,8 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     if (!this.onFloor()) {
       this.state = 'jump';
       // Left and right stay screen directions in the air, so holding
-      // the jump-in key keeps carrying you over. Forward and back
-      // swap only after the landing, when the sides have changed.
+      // the jump-in key keeps carrying you over. The jump clip is
+      // started once, above, and is not replayed on the way down.
       if (input.left !== input.right) {
         this.body.setVelocityX(input.left ? -MOVE_SPEED : MOVE_SPEED);
       }
@@ -214,9 +229,14 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     }
 
     this.body.setVelocityX(this.groundSpeed(input));
-    const moving = input.left !== input.right;
-    this.state = moving ? 'walk' : 'idle';
-    this.playAnim(this.state);
+    const backward = this.isHoldingBack(input);
+    if (input.left !== input.right) {
+      this.state = 'walk';
+      this.playAnim('walk', false, backward);
+      return;
+    }
+    this.state = 'idle';
+    this.playAnim('idle');
   }
 
   /**
@@ -230,13 +250,13 @@ export default class Fighter extends Phaser.Physics.Arcade.Sprite {
     return this.opponent.x > this.x ? 1 : -1;
   }
 
-  /** Ground speed. Toward the opponent is forward. Away is the slow back step. */
+  /** Ground speed. Toward the opponent is forward. Away walks backward. */
   groundSpeed(input) {
     if (this.holdingToward(input)) {
       return this.forwardSign() * MOVE_SPEED;
     }
     if (this.isHoldingBack(input)) {
-      return -this.forwardSign() * BACK_SPEED;
+      return -this.forwardSign() * MOVE_SPEED;
     }
     return 0;
   }
