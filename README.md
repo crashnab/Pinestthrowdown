@@ -60,7 +60,7 @@ assets/                     Art. See below.
 
 ## Art that is loaded
 
-Preload loads the title files and everything the select screen draws. The roster file points at the tiles, the two large portraits, and the two name plates.
+Preload loads the title files and everything the select screen draws. The roster file points at the tiles, and at a `-hero.png` portrait and a `-text.png` name for every fighter.
 
 ```
 assets/title/title-bkg.jpg
@@ -68,8 +68,8 @@ assets/title/title-pstd.png
 assets/title/title-pressstart.png
 assets/select/charselect-bkg.png
 assets/select/charselect-chooseyourfighter-text.png
-assets/select/portraits/charselect-easye-hero.png
-assets/select/portraits/charselect-robgob-hero.png
+assets/select/portraits/             charselect-<name>-hero.png for all 7
+assets/select/charselect-<name>-text.png
 assets/select/thumbnails/            p1 (pink frame) and p2 (orange frame) for all 7
 ```
 

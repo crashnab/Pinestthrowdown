@@ -2,7 +2,10 @@
  * The roster, in select-screen order.
  * Row one is the first four entries. Row two is the last three, centered.
  * A new fighter is a new object. `playable` stays false until that fighter
- * has a portrait and can be taken into a match.
+ * can be taken into a match.
+ *
+ * The large side art is `charselect-<name>-hero.png` and
+ * `charselect-<name>-text.png`. The grid still uses the small tiles.
  */
 export const ROSTER = [
   {
@@ -25,6 +28,8 @@ export const ROSTER = [
     playable: false,
     thumbP1: 'assets/select/thumbnails/charselect-dollabills-p1.png',
     thumbP2: 'assets/select/thumbnails/charselect-dollabillstile-p2.png',
+    portrait: 'assets/select/portraits/charselect-dollabills-hero.png',
+    nameImage: 'assets/select/charselect-dollabills-text.png',
   },
   {
     id: 'fluff',
@@ -32,6 +37,8 @@ export const ROSTER = [
     playable: false,
     thumbP1: 'assets/select/thumbnails/charselect-flufftile-p1.png',
     thumbP2: 'assets/select/thumbnails/charselect-flufftile-p2.png',
+    portrait: 'assets/select/portraits/charselect-fluff-hero.png',
+    nameImage: 'assets/select/charselect-fluff-text.png',
   },
   {
     id: 'easy-e',
@@ -53,6 +60,8 @@ export const ROSTER = [
     playable: false,
     thumbP1: 'assets/select/thumbnails/charselect-hosstile-p1.png',
     thumbP2: 'assets/select/thumbnails/charselect-hosstile-p2.png',
+    portrait: 'assets/select/portraits/charselect-hoss-hero.png',
+    nameImage: 'assets/select/charselect-hoss-text.png',
   },
   {
     id: 'fels',
@@ -60,6 +69,8 @@ export const ROSTER = [
     playable: false,
     thumbP1: 'assets/select/thumbnails/charselect-felstile-p1.png',
     thumbP2: 'assets/select/thumbnails/charselect-felstile-p2.png',
+    portrait: 'assets/select/portraits/charselect-fels-hero.png',
+    nameImage: 'assets/select/charselect-fels-text.png',
   },
   {
     id: 'naptime',
@@ -67,6 +78,8 @@ export const ROSTER = [
     playable: false,
     thumbP1: 'assets/select/thumbnails/charselect-naptimetile-p1.png',
     thumbP2: 'assets/select/thumbnails/charselect-naptimetile-p2.png',
+    portrait: 'assets/select/portraits/charselect-naptime-hero.png',
+    nameImage: 'assets/select/charselect-naptime-text.png',
   },
 ];
 
@@ -90,19 +103,26 @@ export function rosterSlot(index) {
   return { row: 1, col: index - TOP_ROW };
 }
 
-/** Texture keys and file paths for every portrait, name plate, and tile. */
+/**
+ * Texture keys and file paths for the grid tiles, the large side portraits,
+ * and the name graphics. Preload loads this whole list.
+ * Portraits use the `-hero.png` files. Names use the `-text.png` files.
+ */
 export function rosterAssets() {
   const assets = [];
 
   for (const fighter of ROSTER) {
+    if (!fighter.portrait || !fighter.portrait.endsWith('-hero.png')) {
+      throw new Error(`${fighter.name} needs a -hero.png portrait.`);
+    }
+    if (!fighter.nameImage || !fighter.nameImage.endsWith('-text.png')) {
+      throw new Error(`${fighter.name} needs a -text.png name graphic.`);
+    }
+
     assets.push({ key: `${fighter.id}-thumb-p1`, url: fighter.thumbP1 });
     assets.push({ key: `${fighter.id}-thumb-p2`, url: fighter.thumbP2 });
-    if (fighter.portrait) {
-      assets.push({ key: `${fighter.id}-portrait`, url: fighter.portrait });
-    }
-    if (fighter.nameImage) {
-      assets.push({ key: `${fighter.id}-name`, url: fighter.nameImage });
-    }
+    assets.push({ key: `${fighter.id}-portrait`, url: fighter.portrait });
+    assets.push({ key: `${fighter.id}-name`, url: fighter.nameImage });
   }
 
   return assets;
