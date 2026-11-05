@@ -3,9 +3,11 @@ import { LEVELS, LEVEL_HEADER, levelSelectAssets } from '../data/levels.js';
 import { SELECT_KEYS } from '../systems/controls.js';
 
 const VIEW_WIDTH = 1920;
-const HEADER_Y = 156;
+// Placed to match the level mockup: title above the row, names just under the pictures.
+const HEADER_Y = 224;
+const THUMB_Y = 565;
 const THUMB_GAP = 40;
-const NAME_GAP = 28;
+const NAME_GAP = 41;
 const SIDE_MARGIN = 80;
 const HINT_Y = 1048;
 const HINT = 'P1  A D MOVE   F READY   G BACK';
@@ -67,14 +69,14 @@ export default class LevelSelectScene extends Phaser.Scene {
     }
 
     this.add.image(this.scale.width / 2, this.scale.height / 2, 'select-bg').setDepth(0);
-    const header = this.add.image(VIEW_WIDTH / 2, HEADER_Y, LEVEL_HEADER.key).setDepth(6);
+    this.add.image(VIEW_WIDTH / 2, HEADER_Y, LEVEL_HEADER.key).setDepth(6);
 
     this.slots = LEVELS.map((level) => ({
       level,
       thumb: this.add.image(0, 0, level.thumb).setDepth(4),
       name: this.add.image(0, 0, level.name).setDepth(5),
     }));
-    this.layout(header);
+    this.layout();
 
     this.hint = this.add
       .text(VIEW_WIDTH / 2, HINT_Y, HINT, {
@@ -89,7 +91,7 @@ export default class LevelSelectScene extends Phaser.Scene {
     this.refresh();
   }
 
-  layout(header) {
+  layout() {
     const thumbs = this.slots.map((slot) => slot.thumb);
     const widths = thumbs.map((thumb) => thumb.displayWidth);
     const thumbHeight = Math.max(...thumbs.map((thumb) => thumb.displayHeight));
@@ -102,18 +104,11 @@ export default class LevelSelectScene extends Phaser.Scene {
       row = widths.reduce((sum, width) => sum + width, 0) + gap * (thumbs.length - 1);
     }
 
-    const headerBottom = header.y + header.displayHeight / 2;
-    const block = thumbHeight + NAME_GAP + nameHeight;
-    const roomTop = headerBottom + 36;
-    const roomBottom = HINT_Y - 36;
-    const top = roomTop + Math.max(0, roomBottom - roomTop - block) / 2;
-    const thumbY = top + thumbHeight / 2;
-    const nameY = top + thumbHeight + NAME_GAP + nameHeight / 2;
-
+    const nameY = THUMB_Y + thumbHeight / 2 + NAME_GAP + nameHeight / 2;
     let x = (VIEW_WIDTH - row) / 2;
     this.slots.forEach((slot, index) => {
       const center = x + widths[index] / 2;
-      slot.thumb.setPosition(center, thumbY);
+      slot.thumb.setPosition(center, THUMB_Y);
       slot.name.setPosition(center, nameY);
       x += widths[index] + gap;
     });
