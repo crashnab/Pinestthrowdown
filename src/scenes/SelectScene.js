@@ -22,7 +22,7 @@ const HINT = 'P1  WASD MOVE   F READY   G BACK          P2  ARROWS MOVE   ENTER 
  * Two local cursors on the roster grid.
  * Player 1 starts on Easy E. Player 2 starts on RobGob.
  * Only fighters marked playable can be readied. When both are ready,
- * the Game scene opens if it exists.
+ * level select opens with those two fighters.
  */
 export default class SelectScene extends Phaser.Scene {
   constructor() {
@@ -287,11 +287,7 @@ export default class SelectScene extends Phaser.Scene {
     document.documentElement.dataset.select = 'ready';
     this.hint.setText('BOTH FIGHTERS READY');
 
-    if (this.scene.manager.keys.Game) {
-      this.scene.start('Game');
-    } else {
-      console.info(`Both fighters ready: ${p1} vs ${p2}. The match is the next scene.`);
-    }
+    this.scene.start('LevelSelect', { p1, p2 });
   }
 }
 

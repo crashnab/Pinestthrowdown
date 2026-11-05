@@ -5,7 +5,7 @@
  */
 export const CONCERT_STAGE = {
   id: 'concert',
-  key: 'stage-concert',
+  key: 'Level-4-Concert-bkg',
   url: 'assets/stages/concert/Level-4-Concert-bkg.jpg',
   worldWidth: 2400,
   worldHeight: 1200,

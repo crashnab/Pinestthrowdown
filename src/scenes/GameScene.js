@@ -1,5 +1,6 @@
 import Phaser from '../phaser.js';
 import { CONCERT_STAGE } from '../data/stages.js';
+import { DEFAULT_BACKGROUND, levelByBackground } from '../data/levels.js';
 import { fighterById, fightAssets } from '../data/characters.js';
 import { FIGHT_KEYS } from '../systems/controls.js';
 import RoundManager from '../systems/RoundManager.js';
@@ -10,20 +11,21 @@ import FightHud from '../ui/FightHud.js';
 const SEPARATION = 100;
 
 /**
- * One match on the concert stage.
- * Character select stores p1Fighter and p2Fighter on the registry.
- * This scene reads those ids. ?fight=1 from the boot scene uses the same path.
+ * One match. Level select passes both fighters and the stage background.
+ * ?fight=1 skips the menus and uses Easy E, RobGob, and the concert stage.
  */
 export default class GameScene extends Phaser.Scene {
   constructor() {
     super({ key: 'Game' });
   }
 
-  init() {
+  init(data) {
+    const payload = data && typeof data === 'object' ? data : {};
     this.ids = {
-      p1: this.readFighterId('p1', 'easy-e'),
-      p2: this.readFighterId('p2', 'robgob'),
+      p1: payload.p1 || this.readFighterId('p1', 'easy-e'),
+      p2: payload.p2 || this.readFighterId('p2', 'robgob'),
     };
+    this.backgroundKey = payload.background || this.registry.get('levelBackground') || DEFAULT_BACKGROUND;
     this.failed = [];
     this.failMessage = '';
     this.resultShown = false;
@@ -46,7 +48,15 @@ export default class GameScene extends Phaser.Scene {
       console.error(`Could not load ${label}`);
     });
 
-    this.load.image(CONCERT_STAGE.key, CONCERT_STAGE.url);
+    try {
+      const level = levelByBackground(this.backgroundKey);
+      if (!this.textures.exists(level.background)) {
+        this.load.image(level.background, level.backgroundUrl);
+      }
+    } catch (error) {
+      this.failMessage = error instanceof Error ? error.message : String(error);
+      console.error(this.failMessage);
+    }
     for (const asset of assets) {
       if (asset.type === 'atlas') {
         this.load.json(`${asset.key}-data`, asset.url);
@@ -86,7 +96,7 @@ export default class GameScene extends Phaser.Scene {
       this.physics.world.createDebugGraphic();
     }
 
-    this.add.image(0, 0, CONCERT_STAGE.key).setOrigin(0, 0).setDepth(0);
+    this.add.image(0, 0, this.backgroundKey).setOrigin(0, 0).setDepth(0);
 
     this.p1 = new Fighter(this, 760, CONCERT_STAGE.floorY, p1Def, 'p1');
     this.p2 = new Fighter(this, 1640, CONCERT_STAGE.floorY, p2Def, 'p2');
@@ -336,6 +346,7 @@ export default class GameScene extends Phaser.Scene {
     root.round = this.round.phase;
     root.p1 = this.p1.def.id;
     root.p2 = this.p2.def.id;
+    root.background = this.backgroundKey;
     root.p1Health = String(this.round.health.p1);
     root.p2Health = String(this.round.health.p2);
     root.timeLeft = String(Math.ceil(this.round.timeLeft));

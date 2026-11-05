@@ -2,6 +2,7 @@ import BootScene from './scenes/BootScene.js';
 import PreloadScene from './scenes/PreloadScene.js';
 import TitleScene from './scenes/TitleScene.js';
 import SelectScene from './scenes/SelectScene.js';
+import LevelSelectScene from './scenes/LevelSelectScene.js';
 import GameScene from './scenes/GameScene.js';
 
 export const GAME_WIDTH = 1920;
@@ -22,7 +23,8 @@ function getPhaser() {
 /**
  * One config object for the whole game. New scenes get added to `scene`.
  * Only the first scene runs on startup. Boot starts Preload, which starts Title.
- * Title starts Select. Select starts Game once both fighters are ready.
+ * Title starts Select. Select starts LevelSelect once both fighters are ready.
+ * LevelSelect starts Game with the chosen stage.
  */
 export function createGameConfig() {
   const Phaser = getPhaser();
@@ -50,7 +52,7 @@ export function createGameConfig() {
         debug: false,
       },
     },
-    scene: [BootScene, PreloadScene, TitleScene, SelectScene, GameScene],
+    scene: [BootScene, PreloadScene, TitleScene, SelectScene, LevelSelectScene, GameScene],
     banner: false,
   };
 }
