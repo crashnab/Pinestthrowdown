@@ -1,6 +1,7 @@
 import Phaser from '../phaser.js';
 import { LEVELS, LEVEL_HEADER, levelSelectAssets } from '../data/levels.js';
 import { SELECT_KEYS } from '../systems/controls.js';
+import { PadReader } from '../systems/gamepad.js';
 
 const VIEW_WIDTH = 1920;
 // Placed to match the level mockup: title above the row, names just under the pictures.
@@ -115,6 +116,7 @@ export default class LevelSelectScene extends Phaser.Scene {
   }
 
   bindKeys() {
+    this.pad = new PadReader(this, 'p1');
     const keyboard = this.input.keyboard;
     if (!keyboard) {
       console.error('Keyboard input is off, so level select cannot be played.');
@@ -137,16 +139,19 @@ export default class LevelSelectScene extends Phaser.Scene {
       return;
     }
 
-    if (Phaser.Input.Keyboard.JustDown(this.keys.left)) {
+    this.pad.poll();
+    const tapped = (key, action) => Phaser.Input.Keyboard.JustDown(key) || this.pad.tapped(action);
+
+    if (tapped(this.keys.left, 'left')) {
       this.move(-1);
     }
-    if (Phaser.Input.Keyboard.JustDown(this.keys.right)) {
+    if (tapped(this.keys.right, 'right')) {
       this.move(1);
     }
-    if (Phaser.Input.Keyboard.JustDown(this.keys.confirm)) {
+    if (tapped(this.keys.confirm, 'confirm')) {
       this.confirm();
     }
-    if (Phaser.Input.Keyboard.JustDown(this.keys.cancel)) {
+    if (tapped(this.keys.cancel, 'cancel')) {
       this.scene.start('Select');
     }
   }

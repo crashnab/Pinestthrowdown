@@ -3,6 +3,7 @@ import { CONCERT_STAGE } from '../data/stages.js';
 import { DEFAULT_BACKGROUND, levelByBackground } from '../data/levels.js';
 import { fighterById, fightAssets } from '../data/characters.js';
 import { FIGHT_KEYS } from '../systems/controls.js';
+import { PadReader } from '../systems/gamepad.js';
 import RoundManager from '../systems/RoundManager.js';
 import { cameraScroll } from '../systems/cameraRig.js';
 import Fighter, { FIGHTER_GRAVITY, createFighterAnimations, prepareFighter } from '../entities/Fighter.js';
@@ -141,6 +142,8 @@ export default class GameScene extends Phaser.Scene {
 
     this.round.tick(delta);
     const fighting = this.round.phase === 'fight';
+    this.pads.p1.poll();
+    this.pads.p2.poll();
     const input = {
       p1: this.readInput('p1'),
       p2: this.readInput('p2'),
@@ -172,6 +175,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   bindKeys() {
+    this.pads = { p1: new PadReader(this, 'p1'), p2: new PadReader(this, 'p2') };
     const keyboard = this.input.keyboard;
     if (!keyboard) {
       console.error('Keyboard input is off, so the match cannot be played.');
@@ -193,22 +197,26 @@ export default class GameScene extends Phaser.Scene {
       return { left: false, right: false, jump: false, crouch: false, punch: false, kick: false, special: false, block: false };
     }
     const keys = this.keys[id];
-    const held = (key) => Boolean(key && key.isDown);
-    const tapped = (key) => Boolean(key && Phaser.Input.Keyboard.JustDown(key));
+    const pad = this.pads[id];
+    // A key or a controller button counts. Each player can use either.
+    const held = (key, action) => Boolean(key && key.isDown) || pad.held(action);
+    const tapped = (key, action) => Boolean(key && Phaser.Input.Keyboard.JustDown(key)) || pad.tapped(action);
     return {
-      left: held(keys.left),
-      right: held(keys.right),
-      jump: tapped(keys.up),
-      crouch: held(keys.down),
-      punch: tapped(keys.punch),
-      kick: tapped(keys.kick),
-      special: tapped(keys.special),
-      block: held(keys.block),
+      left: held(keys.left, 'left'),
+      right: held(keys.right, 'right'),
+      jump: tapped(keys.up, 'up'),
+      crouch: held(keys.down, 'down'),
+      punch: tapped(keys.punch, 'punch'),
+      kick: tapped(keys.kick, 'kick'),
+      special: tapped(keys.special, 'special'),
+      block: held(keys.block, 'block'),
     };
   }
 
   continuePressed(input) {
-    return input.p1.punch || input.p2.punch || (this.continueKey && Phaser.Input.Keyboard.JustDown(this.continueKey));
+    const startTapped = this.pads.p1.tapped('start') || this.pads.p2.tapped('start');
+    return input.p1.punch || input.p2.punch || startTapped
+      || (this.continueKey && Phaser.Input.Keyboard.JustDown(this.continueKey));
   }
 
   resolveHits(input) {

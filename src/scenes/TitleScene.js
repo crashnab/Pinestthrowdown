@@ -65,6 +65,11 @@ export default class TitleScene extends Phaser.Scene {
     }
 
     this.input.once('pointerdown', start);
+
+    // Any controller button starts the game, the same way Enter does.
+    if (this.input.gamepad) {
+      this.input.gamepad.once('down', start);
+    }
   }
 
   onPressStart() {

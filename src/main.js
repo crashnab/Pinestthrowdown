@@ -4,6 +4,7 @@ import TitleScene from './scenes/TitleScene.js';
 import SelectScene from './scenes/SelectScene.js';
 import LevelSelectScene from './scenes/LevelSelectScene.js';
 import GameScene from './scenes/GameScene.js';
+import PadDebugScene from './ui/PadDebugOverlay.js';
 
 export const GAME_WIDTH = 1920;
 export const GAME_HEIGHT = 1080;
@@ -52,7 +53,11 @@ export function createGameConfig() {
         debug: false,
       },
     },
-    scene: [BootScene, PreloadScene, TitleScene, SelectScene, LevelSelectScene, GameScene],
+    scene: [BootScene, PreloadScene, TitleScene, SelectScene, LevelSelectScene, GameScene, PadDebugScene],
+    // Controllers are read alongside the keyboard. See src/systems/gamepad.js.
+    input: {
+      gamepad: true,
+    },
     banner: false,
   };
 }
