@@ -40,6 +40,11 @@ export default class BootScene extends Phaser.Scene {
     console.info(`BootScene ready (${width}×${height}).`);
 
     const params = new URLSearchParams(window.location.search);
+    // ?debug=pad shows live controller input along the bottom of the screen.
+    if (params.get('debug') === 'pad') {
+      this.scene.launch('PadDebug');
+    }
+
     if (params.get('fight') === '1') {
       this.registry.set('p1Fighter', params.get('p1') || 'easy-e');
       this.registry.set('p2Fighter', params.get('p2') || 'robgob');

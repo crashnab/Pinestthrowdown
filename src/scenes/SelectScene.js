@@ -1,6 +1,7 @@
 import Phaser from '../phaser.js';
 import { ROSTER, rosterAssets, rosterIndex } from '../data/characters.js';
 import { PLAYER_STYLE, SELECT_KEYS } from '../systems/controls.js';
+import { PadReader } from '../systems/gamepad.js';
 
 const CELL_W = 190;
 const CELL_H = 224;
@@ -130,6 +131,7 @@ export default class SelectScene extends Phaser.Scene {
   }
 
   bindKeys() {
+    this.pads = { p1: new PadReader(this, 'p1'), p2: new PadReader(this, 'p2') };
     const keyboard = this.input.keyboard;
     if (!keyboard) {
       console.error('Keyboard input is off, so character select cannot be played.');
@@ -155,12 +157,15 @@ export default class SelectScene extends Phaser.Scene {
     for (const id of ['p1', 'p2']) {
       const player = this.players[id];
       const keys = this.keys[id];
-      if (Phaser.Input.Keyboard.JustDown(keys.left)) this.move(player, -1, 0);
-      if (Phaser.Input.Keyboard.JustDown(keys.right)) this.move(player, 1, 0);
-      if (Phaser.Input.Keyboard.JustDown(keys.up)) this.move(player, 0, -1);
-      if (Phaser.Input.Keyboard.JustDown(keys.down)) this.move(player, 0, 1);
-      if (Phaser.Input.Keyboard.JustDown(keys.confirm)) this.confirm(player);
-      if (Phaser.Input.Keyboard.JustDown(keys.cancel)) this.cancel(player);
+      const pad = this.pads[id];
+      pad.poll();
+      const tapped = (key, action) => Phaser.Input.Keyboard.JustDown(key) || pad.tapped(action);
+      if (tapped(keys.left, 'left')) this.move(player, -1, 0);
+      if (tapped(keys.right, 'right')) this.move(player, 1, 0);
+      if (tapped(keys.up, 'up')) this.move(player, 0, -1);
+      if (tapped(keys.down, 'down')) this.move(player, 0, 1);
+      if (tapped(keys.confirm, 'confirm')) this.confirm(player);
+      if (tapped(keys.cancel, 'cancel')) this.cancel(player);
     }
   }
 
